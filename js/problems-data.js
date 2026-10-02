@@ -1113,6 +1113,20 @@ window.LEETCODE_TOPICS_DATA = [
         "space": "O(1)",
         "topicId": 12,
         "topicName": "Intervals"
+      },
+      {
+        "id": 1235,
+        "title": "Maximum Profit in Job Scheduling",
+        "slug": "maximum-profit-in-job-scheduling",
+        "difficulty": "Hard",
+        "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+        "paid_only": false,
+        "alt_url": null,
+        "hint": "Weighted Interval Scheduling: Sort jobs by end time. DP with binary search (bisect_right) to find latest non-overlapping job. Either skip job or take profit + dp[prev].",
+        "time": "O(N log N)",
+        "space": "O(N)",
+        "topicId": 12,
+        "topicName": "Intervals"
       }
     ]
   },

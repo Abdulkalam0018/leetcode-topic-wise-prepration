@@ -24,6 +24,7 @@ for start, end in intervals[1:]:
 | [ ] | 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) *(Premium - [Free Alt](https://www.lintcode.com/problem/919/))* | **Medium** | `O(N log N)` | `O(N)` | Sort intervals by start time. Min-heap of end times. If start >= earliest end, pop heap; always push end time. Heap size is rooms needed. |
 | [ ] | 435 | [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) | **Medium** | `O(N log N)` | `O(1)` | Interval scheduling greedy: sort by end time. Always keep interval with earliest end time; count overlaps removed. |
 | [ ] | 452 | [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/) | **Medium** | `O(N log N)` | `O(1)` | Sort balloons by end point. Greedily shoot arrow at current end point; skip balloons that start before or at arrow position. |
+| [ ] | 1235 | [Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) | **Hard** | `O(N log N)` | `O(N)` | Weighted Interval Scheduling: Sort jobs by end time. DP with binary search (bisect_right) to find latest non-overlapping job. Either skip job or take profit + dp[prev]. |
 
 ---
 
@@ -182,6 +183,32 @@ for start, end in intervals[1:]:
 ```python
 # Solution template for LC 452 - Minimum Number of Arrows to Burst Balloons
 # Time: O(N log N), Space: O(1)
+
+```
+
+---
+
+### LeetCode 1235: [Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Weighted Interval Scheduling: Sort jobs by end time. DP with binary search (bisect_right) to find latest non-overlapping job. Either skip job or take profit + dp[prev].
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1235 - Maximum Profit in Job Scheduling
+# Time: O(N log N), Space: O(N)
 
 ```
 

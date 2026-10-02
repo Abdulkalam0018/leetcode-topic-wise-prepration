@@ -1,11 +1,11 @@
 # 🚀 LeetCode Topic-Wise Preparation & Revision Tracker
 
-[![Problems](https://img.shields.io/badge/Problems-180-blue.svg)](#problems-matrix) 
+[![Problems](https://img.shields.io/badge/Problems-181-blue.svg)](#problems-matrix) 
 [![Topics](https://img.shields.io/badge/Topics-30-orange.svg)](#topic-breakdown) 
 [![Interactive Tracker](https://img.shields.io/badge/Interactive_App-index.html-brightgreen.svg)](./index.html) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A complete, structured curriculum of **180 high-yield LeetCode problems** categorized across **30 essential DSA patterns**.
+A complete, structured curriculum of **181 high-yield LeetCode problems** categorized across **30 essential DSA patterns**.
 
 This repository is equipped with both a **comprehensive Markdown revision guide** and an **interactive Web Revision Dashboard** (`index.html`) featuring real-time progress tracking, mark-as-done toggles, revision bookmarks, and local note-taking capabilities.
 
@@ -58,7 +58,7 @@ python3 -m http.server 8000
 
 | Total Topics | Total Problems | Easy Problems 🟢 | Medium Problems 🟡 | Hard Problems 🔴 |
 |:------------:|:--------------:|:----------------:|:------------------:|:----------------:|
-| **30** | **180** | **30** | **126** | **24** |
+| **30** | **181** | **30** | **126** | **25** |
 
 ## 📚 30 DSA Topics Index
 
@@ -75,7 +75,7 @@ python3 -m http.server 8000
 | 9 | **Monotonic Stack** | 6 | [Open Topic Guide & Notes 📖](topics/09-monotonic-stack.md) |
 | 10 | **Monotonic Queue / Deque** | 6 | [Open Topic Guide & Notes 📖](topics/10-monotonic-queue-deque.md) |
 | 11 | **Heap / Top K** | 6 | [Open Topic Guide & Notes 📖](topics/11-heap-top-k.md) |
-| 12 | **Intervals** | 6 | [Open Topic Guide & Notes 📖](topics/12-intervals.md) |
+| 12 | **Intervals** | 7 | [Open Topic Guide & Notes 📖](topics/12-intervals.md) |
 | 13 | **Greedy Scheduling / Sorting** | 6 | [Open Topic Guide & Notes 📖](topics/13-greedy-scheduling-sorting.md) |
 | 14 | **Linked List Manipulation** | 6 | [Open Topic Guide & Notes 📖](topics/14-linked-list-manipulation.md) |
 | 15 | **Tree DFS** | 6 | [Open Topic Guide & Notes 📖](topics/15-tree-dfs.md) |
@@ -97,7 +97,7 @@ python3 -m http.server 8000
 
 ---
 
-## 📑 Complete 180 Problem Roadmap
+## 📑 Complete 181 Problem Roadmap
 
 ### 1. [Sliding Window](topics/01-sliding-window.md)
 
@@ -254,6 +254,7 @@ python3 -m http.server 8000
 | [ ] | 253 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) *(Premium - [Free Alt](https://www.lintcode.com/problem/919/))* | **Medium** | `O(N log N)` | `O(N)` | Sort intervals by start time. Min-heap of end times. If start >= earliest end, pop heap; always push end time. Heap size is rooms needed. | [Notes 📝](topics/12-intervals.md#leetcode-253-meeting-rooms-ii) |
 | [ ] | 435 | [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/) | **Medium** | `O(N log N)` | `O(1)` | Interval scheduling greedy: sort by end time. Always keep interval with earliest end time; count overlaps removed. | [Notes 📝](topics/12-intervals.md#leetcode-435-non-overlapping-intervals) |
 | [ ] | 452 | [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/) | **Medium** | `O(N log N)` | `O(1)` | Sort balloons by end point. Greedily shoot arrow at current end point; skip balloons that start before or at arrow position. | [Notes 📝](topics/12-intervals.md#leetcode-452-minimum-number-of-arrows-to-burst-balloons) |
+| [ ] | 1235 | [Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) | **Hard** | `O(N log N)` | `O(N)` | Weighted Interval Scheduling: Sort jobs by end time. DP with binary search (bisect_right) to find latest non-overlapping job. Either skip job or take profit + dp[prev]. | [Notes 📝](topics/12-intervals.md#leetcode-1235-maximum-profit-in-job-scheduling) |
 
 ### 13. [Greedy Scheduling / Sorting](topics/13-greedy-scheduling-sorting.md)
 
