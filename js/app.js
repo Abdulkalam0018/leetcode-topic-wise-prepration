@@ -1,6 +1,6 @@
 /**
  * LeetCode Topic-Wise Preparation & Revision Tracker
- * Interactive Application Controller
+ * Interactive Application Controller with Custom Problem Support
  */
 
 (function () {
@@ -12,7 +12,8 @@
   // State
   let trackerState = {
     problems: {}, // { [pid]: { solved: boolean, starred: boolean, notes: string, updatedAt: number } }
-    collapsedTopics: {} // { [topicId]: boolean }
+    collapsedTopics: {}, // { [topicId]: boolean }
+    customProblems: [] // [ { id, title, slug, difficulty, url, hint, time, space, topicId, topicName, isCustom: true } ]
   };
 
   let activeFilters = {
@@ -39,6 +40,25 @@
   const importJsonBtn = document.getElementById('importJsonBtn');
   const importFileInput = document.getElementById('importFileInput');
   const toast = document.getElementById('toast');
+
+  // Add Problem Modal Elements
+  const addProblemModal = document.getElementById('addProblemModal');
+  const openAddProblemModalBtn = document.getElementById('openAddProblemModalBtn');
+  const openAddProblemToolbarBtn = document.getElementById('openAddProblemToolbarBtn');
+  const closeAddProblemModalBtn = document.getElementById('closeAddProblemModalBtn');
+  const cancelAddProblemBtn = document.getElementById('cancelAddProblemBtn');
+  const addProblemForm = document.getElementById('addProblemForm');
+  const addProblemTopicSelect = document.getElementById('addProblemTopicSelect');
+  const addProblemId = document.getElementById('addProblemId');
+  const addProblemTitle = document.getElementById('addProblemTitle');
+  const addProblemDiff = document.getElementById('addProblemDiff');
+  const addProblemUrl = document.getElementById('addProblemUrl');
+  const addProblemTime = document.getElementById('addProblemTime');
+  const addProblemSpace = document.getElementById('addProblemSpace');
+  const addProblemHint = document.getElementById('addProblemHint');
+  const addProblemNotes = document.getElementById('addProblemNotes');
+  const addProblemSolved = document.getElementById('addProblemSolved');
+  const addProblemStarred = document.getElementById('addProblemStarred');
 
   // Stats Elements
   const totalSolvedCount = document.getElementById('totalSolvedCount');
@@ -105,6 +125,9 @@
         if (parsed && parsed.collapsedTopics) {
           trackerState.collapsedTopics = parsed.collapsedTopics;
         }
+        if (parsed && parsed.customProblems && Array.isArray(parsed.customProblems)) {
+          trackerState.customProblems = parsed.customProblems;
+        }
       }
     } catch (e) {
       console.error('Error loading state from localStorage:', e);
@@ -126,6 +149,35 @@
     } catch (e) {
       return null;
     }
+  }
+
+  // Combine Base Topics with User's Custom Problems
+  function getCombinedTopics() {
+    if (!window.LEETCODE_TOPICS_DATA) return [];
+    
+    // Deep clone base topics
+    const cloned = window.LEETCODE_TOPICS_DATA.map(t => ({
+      ...t,
+      problems: [...t.problems]
+    }));
+
+    // Merge custom problems into corresponding topics
+    if (trackerState.customProblems && trackerState.customProblems.length > 0) {
+      trackerState.customProblems.forEach(customP => {
+        const topic = cloned.find(t => t.id === customP.topicId);
+        if (topic) {
+          // Avoid duplicate display if already present
+          if (!topic.problems.some(p => p.id === customP.id)) {
+            topic.problems.push({
+              ...customP,
+              isCustom: true
+            });
+          }
+        }
+      });
+    }
+
+    return cloned;
   }
 
   // Theme Management
@@ -153,7 +205,7 @@
     }
   }
 
-  // Populate Topic Dropdown
+  // Populate Topic Dropdown in Filters
   function populateTopicSelect() {
     if (!window.LEETCODE_TOPICS_DATA) return;
     topicSelect.innerHTML = '<option value="all">All 30 Topics</option>';
@@ -173,7 +225,8 @@
 
   // Render Topic Cards & Problem Tables
   function renderTopics() {
-    if (!window.LEETCODE_TOPICS_DATA) return;
+    const allTopics = getCombinedTopics();
+    if (!allTopics.length) return;
     topicsContainer.innerHTML = '';
 
     const searchTerm = activeFilters.search.toLowerCase().trim();
@@ -183,7 +236,7 @@
 
     let visibleTopicsCount = 0;
 
-    window.LEETCODE_TOPICS_DATA.forEach(topic => {
+    allTopics.forEach(topic => {
       // Check if topic matches topic filter
       if (filterTopic !== 'all' && String(topic.id) !== String(filterTopic)) {
         return;
@@ -197,7 +250,7 @@
         if (searchTerm) {
           const matchId = String(p.id) === searchTerm || String(p.id).includes(searchTerm);
           const matchTitle = p.title.toLowerCase().includes(searchTerm);
-          const matchHint = p.hint.toLowerCase().includes(searchTerm);
+          const matchHint = (p.hint || '').toLowerCase().includes(searchTerm);
           const matchTopic = topic.name.toLowerCase().includes(searchTerm);
           if (!matchId && !matchTitle && !matchHint && !matchTopic) return false;
         }
@@ -226,7 +279,7 @@
         if (trackerState.problems[p.id]?.solved) topicSolved++;
       });
       const topicTotal = topic.problems.length;
-      const isCompleted = topicSolved === topicTotal;
+      const isCompleted = topicTotal > 0 && topicSolved === topicTotal;
       const isCollapsed = Boolean(trackerState.collapsedTopics[topic.id]);
 
       // Create topic card element
@@ -242,6 +295,9 @@
             <span class="topic-name">${topic.name}</span>
           </div>
           <div class="topic-meta">
+            <button class="btn btn-sm btn-add-topic" data-add-to-topic="${topic.id}" title="Add problem directly to this topic">
+              + Add
+            </button>
             <button class="btn btn-sm cheat-sheet-btn" data-cheat-topic="${topic.id}" title="View Topic Cheat Sheet & Template">
               💡 Cheat Sheet
             </button>
@@ -293,6 +349,7 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.6;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
               ${p.paid_only ? `<a href="${p.alt_url || '#'}" target="_blank" class="badge badge-premium" title="Free LintCode mirror for Premium problem">Free Alt</a>` : ''}
+              ${p.isCustom ? `<span class="badge badge-custom" title="User-added custom problem">Custom</span>` : ''}
             </td>
 
             <!-- Difficulty -->
@@ -307,15 +364,22 @@
 
             <!-- Intuition / Pattern Hint -->
             <td>
-              <span class="hint-chip" title="${p.hint}">💡 ${p.hint}</span>
+              <span class="hint-chip" title="${p.hint || ''}">💡 ${p.hint || 'No hint available'}</span>
             </td>
 
             <!-- Revision Notes Action -->
-            <td style="width: 110px; text-align: right;">
-              <button class="notes-btn ${hasNotes ? 'has-notes' : ''}" data-action="open-notes" data-problem-id="${p.id}">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                ${hasNotes ? 'Notes ✓' : 'Note +'}
-              </button>
+            <td style="width: 125px; text-align: right;">
+              <div style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                <button class="notes-btn ${hasNotes ? 'has-notes' : ''}" data-action="open-notes" data-problem-id="${p.id}">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                  ${hasNotes ? 'Notes ✓' : 'Note +'}
+                </button>
+                ${p.isCustom ? `
+                  <button class="delete-problem-btn" data-action="delete-custom-problem" data-problem-id="${p.id}" data-topic-id="${topic.id}" title="Delete custom problem">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                  </button>
+                ` : ''}
+              </div>
             </td>
           </tr>
         `;
@@ -332,7 +396,7 @@
                 <th style="width: 100px;">Diff</th>
                 <th style="width: 140px;">Time Target</th>
                 <th>Core Intuition</th>
-                <th style="width: 110px; text-align: right;">Notes</th>
+                <th style="width: 125px; text-align: right;">Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -374,7 +438,8 @@
 
   // Update Global Dashboard Metrics
   function updateStats() {
-    if (!window.LEETCODE_TOPICS_DATA) return;
+    const allTopics = getCombinedTopics();
+    if (!allTopics.length) return;
 
     let total = 0;
     let solved = 0;
@@ -383,12 +448,15 @@
     let hardTotal = 0, hardSolved = 0;
     let starred = 0;
 
-    window.LEETCODE_TOPICS_DATA.forEach(topic => {
+    const seenIds = new Set();
+
+    allTopics.forEach(topic => {
       topic.problems.forEach(p => {
         total++;
         const pState = trackerState.problems[p.id] || { solved: false, starred: false };
         if (pState.solved) solved++;
-        if (pState.starred) starred++;
+        if (pState.starred && !seenIds.has(p.id)) starred++;
+        seenIds.add(p.id);
 
         if (p.difficulty === 'Easy') {
           easyTotal++;
@@ -411,6 +479,8 @@
     totalSolvedCount.textContent = solved;
     totalPercentBadge.textContent = `${totalPct}%`;
     totalProgressBar.style.width = `${totalPct}%`;
+    const totalStatTotal = document.querySelector('.stat-card .stat-total');
+    if (totalStatTotal) totalStatTotal.textContent = `/ ${total} Solved`;
 
     easySolvedCount.textContent = easySolved;
     easyTotalCount.textContent = `/ ${easyTotal}`;
@@ -431,11 +501,11 @@
     starredProgressBar.style.width = `${total > 0 ? Math.min(100, Math.round((starred / total) * 100)) : 0}%`;
   }
 
-  // Find problem metadata across topics
+  // Find problem metadata across topics (base + custom)
   function findProblemMeta(pid) {
-    if (!window.LEETCODE_TOPICS_DATA) return null;
+    const allTopics = getCombinedTopics();
     const numId = Number(pid);
-    for (const t of window.LEETCODE_TOPICS_DATA) {
+    for (const t of allTopics) {
       for (const p of t.problems) {
         if (p.id === numId) {
           return { ...p, topicName: t.name };
@@ -460,7 +530,7 @@
     modalProblemTopic.textContent = meta.topicName;
     modalProblemComplexity.textContent = `${meta.time} | ${meta.space}`;
     modalProblemLink.href = meta.url;
-    modalProblemHint.textContent = meta.hint;
+    modalProblemHint.textContent = meta.hint || 'No hint recorded.';
 
     modalSolvedCheckbox.checked = Boolean(pState.solved);
     modalStarredCheckbox.checked = Boolean(pState.starred);
@@ -495,6 +565,39 @@
     renderTopics(); // Update table badges & row styling
   }
 
+  // Add Problem Modal Logic
+  function openAddProblemModal(preselectedTopicId) {
+    if (!window.LEETCODE_TOPICS_DATA) return;
+    addProblemTopicSelect.innerHTML = '';
+    window.LEETCODE_TOPICS_DATA.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t.id;
+      opt.textContent = `${t.id}. ${t.name}`;
+      if (preselectedTopicId && String(t.id) === String(preselectedTopicId)) {
+        opt.selected = true;
+      }
+      addProblemTopicSelect.appendChild(opt);
+    });
+
+    addProblemId.value = '';
+    addProblemTitle.value = '';
+    addProblemDiff.value = 'Medium';
+    addProblemUrl.value = '';
+    addProblemTime.value = 'O(N)';
+    addProblemSpace.value = 'O(1)';
+    addProblemHint.value = '';
+    addProblemNotes.value = '';
+    addProblemSolved.checked = false;
+    addProblemStarred.checked = false;
+
+    addProblemModal.classList.add('active');
+    setTimeout(() => addProblemId.focus(), 60);
+  }
+
+  function closeAddProblemModal() {
+    addProblemModal.classList.remove('active');
+  }
+
   // Cheat Sheet Modal Logic
   function openCheatSheetModal(topicId) {
     if (!window.LEETCODE_TOPICS_DATA) return;
@@ -516,7 +619,7 @@
     if (!currentModalProblem) return;
     let snippet = '';
     if (type === 'intuition') {
-      snippet = `\n### 💡 Key Intuition:\n- ${currentModalProblem.hint}\n`;
+      snippet = `\n### 💡 Key Intuition:\n- ${currentModalProblem.hint || ''}\n`;
     } else if (type === 'complexity') {
       snippet = `\n### ⏱ Complexity:\n- Time: ${currentModalProblem.time}\n- Space: ${currentModalProblem.space}\n`;
     } else if (type === 'edgecases') {
@@ -560,18 +663,20 @@
     document.body.appendChild(dlAnchor);
     dlAnchor.click();
     dlAnchor.remove();
-    showToast("Progress and notes backup exported to JSON!");
+    showToast("Progress, notes & custom problems exported to JSON!");
   }
 
   // Export Notes to Markdown
   function exportMarkdown() {
-    if (!window.LEETCODE_TOPICS_DATA) return;
+    const allTopics = getCombinedTopics();
+    if (!allTopics.length) return;
+
     let md = `# 📝 My Personal LeetCode Revision Notes\n`;
     md += `*Exported on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}*\n\n`;
 
     let notesCount = 0;
 
-    window.LEETCODE_TOPICS_DATA.forEach(topic => {
+    allTopics.forEach(topic => {
       let topicNotes = '';
       topic.problems.forEach(p => {
         const pState = trackerState.problems[p.id];
@@ -579,9 +684,10 @@
           notesCount++;
           const statusStr = pState.solved ? '✅ Solved' : '⏳ In Progress';
           const starStr = pState.starred ? '⭐ Marked for Revision' : '';
-          topicNotes += `### LeetCode ${p.id}: [${p.title}](${p.url})\n`;
+          const customTag = p.isCustom ? ' *(Custom Problem)*' : '';
+          topicNotes += `### LeetCode ${p.id}: [${p.title}](${p.url})${customTag}\n`;
           topicNotes += `- **Difficulty:** ${p.difficulty} | **Target Time:** \`${p.time}\` | **Status:** ${statusStr} ${starStr}\n`;
-          topicNotes += `- **Pattern Hint:** ${p.hint}\n\n`;
+          topicNotes += `- **Pattern Hint:** ${p.hint || 'N/A'}\n\n`;
           topicNotes += `#### My Revision Notes:\n${pState.notes.trim()}\n\n---\n\n`;
         }
       });
@@ -613,10 +719,20 @@
     reader.onload = function (event) {
       try {
         const imported = JSON.parse(event.target.result);
-        if (imported && imported.problems) {
-          trackerState.problems = Object.assign({}, trackerState.problems, imported.problems);
+        if (imported && (imported.problems || imported.customProblems)) {
+          if (imported.problems) {
+            trackerState.problems = Object.assign({}, trackerState.problems, imported.problems);
+          }
           if (imported.collapsedTopics) {
             trackerState.collapsedTopics = Object.assign({}, trackerState.collapsedTopics, imported.collapsedTopics);
+          }
+          if (imported.customProblems && Array.isArray(imported.customProblems)) {
+            const existingIds = new Set(trackerState.customProblems.map(p => `${p.topicId}-${p.id}`));
+            imported.customProblems.forEach(cp => {
+              if (!existingIds.has(`${cp.topicId}-${cp.id}`)) {
+                trackerState.customProblems.push(cp);
+              }
+            });
           }
           saveState();
           renderAll();
@@ -633,9 +749,9 @@
 
   // Random Unsolved Picker
   function pickRandomUnsolved() {
-    if (!window.LEETCODE_TOPICS_DATA) return;
+    const allTopics = getCombinedTopics();
     const unsolvedList = [];
-    window.LEETCODE_TOPICS_DATA.forEach(t => {
+    allTopics.forEach(t => {
       t.problems.forEach(p => {
         if (!trackerState.problems[p.id]?.solved) {
           unsolvedList.push(p);
@@ -644,7 +760,7 @@
     });
 
     if (unsolvedList.length === 0) {
-      showToast("🎉 Incredible! You've solved all 180 questions!");
+      showToast("🎉 Incredible! You've solved all questions!");
       return;
     }
 
@@ -714,8 +830,8 @@
     let allExpanded = true;
     toggleAllAccordionBtn.addEventListener('click', () => {
       allExpanded = !allExpanded;
-      if (!window.LEETCODE_TOPICS_DATA) return;
-      window.LEETCODE_TOPICS_DATA.forEach(t => {
+      const allTopics = getCombinedTopics();
+      allTopics.forEach(t => {
         trackerState.collapsedTopics[t.id] = !allExpanded;
       });
       toggleAllAccordionBtn.textContent = allExpanded ? '↕ Collapse All' : '↕ Expand All';
@@ -723,12 +839,142 @@
       renderTopics();
     });
 
-    // Container clicks (Accordions, Solved toggles, Star toggles, Notes button, Cheat sheet)
-    topicsContainer.addEventListener('click', (e) => {
-      // Toggle Topic Accordion Header
-      const header = e.target.closest('.topic-header');
-      const cheatBtn = e.target.closest('.cheat-sheet-btn');
+    // Open Add Problem Modal Buttons
+    if (openAddProblemModalBtn) {
+      openAddProblemModalBtn.addEventListener('click', () => openAddProblemModal());
+    }
+    if (openAddProblemToolbarBtn) {
+      openAddProblemToolbarBtn.addEventListener('click', () => openAddProblemModal(activeFilters.topic !== 'all' ? activeFilters.topic : null));
+    }
+    closeAddProblemModalBtn.addEventListener('click', closeAddProblemModal);
+    cancelAddProblemBtn.addEventListener('click', closeAddProblemModal);
 
+    // Auto-generate title or slug from LeetCode URL
+    addProblemUrl.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      const match = val.match(/leetcode\.com\/problems\/([a-zA-Z0-9\-]+)/);
+      if (match && match[1] && !addProblemTitle.value) {
+        const slug = match[1];
+        const title = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        addProblemTitle.value = title;
+      }
+    });
+
+    addProblemTitle.addEventListener('blur', () => {
+      if (!addProblemUrl.value && addProblemTitle.value) {
+        const slug = addProblemTitle.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        addProblemUrl.value = `https://leetcode.com/problems/${slug}/`;
+      }
+    });
+
+    // Handle Add Problem Form Submission
+    addProblemForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const tid = Number(addProblemTopicSelect.value);
+      const allTopics = getCombinedTopics();
+      const topic = allTopics.find(t => t.id === tid);
+      const pid = Number(addProblemId.value);
+      const title = addProblemTitle.value.trim();
+      const diff = addProblemDiff.value;
+      let url = addProblemUrl.value.trim();
+      const time = addProblemTime.value.trim() || 'O(N)';
+      const space = addProblemSpace.value.trim() || 'O(1)';
+      const hint = addProblemHint.value.trim() || 'Key pattern & intuition notes.';
+      const notes = addProblemNotes.value.trim();
+      const isSolved = addProblemSolved.checked;
+      const isStarred = addProblemStarred.checked;
+
+      if (!url) {
+        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        url = `https://leetcode.com/problems/${slug}/`;
+      }
+
+      const slug = url.split('/').filter(Boolean).pop() || `problem-${pid}`;
+
+      const customObj = {
+        id: pid,
+        title: title,
+        slug: slug,
+        difficulty: diff,
+        url: url,
+        paid_only: false,
+        hint: hint,
+        time: time,
+        space: space,
+        topicId: tid,
+        topicName: topic ? topic.name : '',
+        isCustom: true
+      };
+
+      // Check if already in custom problems
+      const existingIdx = trackerState.customProblems.findIndex(p => p.id === pid && p.topicId === tid);
+      if (existingIdx >= 0) {
+        trackerState.customProblems[existingIdx] = customObj;
+      } else {
+        trackerState.customProblems.push(customObj);
+      }
+
+      // Save initial notes & status
+      if (!trackerState.problems[pid]) {
+        trackerState.problems[pid] = { solved: false, starred: false, notes: '' };
+      }
+      trackerState.problems[pid].solved = isSolved;
+      trackerState.problems[pid].starred = isStarred;
+      if (notes) trackerState.problems[pid].notes = notes;
+      trackerState.problems[pid].updatedAt = Date.now();
+
+      // Ensure topic card is expanded
+      trackerState.collapsedTopics[tid] = false;
+
+      saveState();
+      renderAll();
+      closeAddProblemModal();
+      showToast(`Added #${pid} "${title}" to ${topic ? topic.name : 'Topic'}!`);
+
+      // Highlight new row
+      setTimeout(() => {
+        const row = document.getElementById(`problem-row-${pid}`);
+        if (row) {
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          row.style.outline = '2px solid var(--accent-primary)';
+          row.style.backgroundColor = 'var(--accent-glow)';
+          setTimeout(() => {
+            row.style.outline = '';
+            row.style.backgroundColor = '';
+          }, 3000);
+        }
+      }, 200);
+    });
+
+    // Container clicks (Accordions, Solved toggles, Star toggles, Notes button, Cheat sheet, Add to Topic, Delete Custom)
+    topicsContainer.addEventListener('click', (e) => {
+      // Add problem directly to this topic
+      const addTopicBtn = e.target.closest('.btn-add-topic');
+      if (addTopicBtn) {
+        e.stopPropagation();
+        const tid = addTopicBtn.getAttribute('data-add-to-topic');
+        openAddProblemModal(tid);
+        return;
+      }
+
+      // Delete Custom Problem
+      const deleteBtn = e.target.closest('[data-action="delete-custom-problem"]');
+      if (deleteBtn) {
+        e.stopPropagation();
+        const pid = Number(deleteBtn.getAttribute('data-problem-id'));
+        const tid = Number(deleteBtn.getAttribute('data-topic-id'));
+        if (confirm(`Are you sure you want to delete custom problem #${pid}?`)) {
+          trackerState.customProblems = trackerState.customProblems.filter(p => !(p.id === pid && p.topicId === tid));
+          delete trackerState.problems[pid];
+          saveState();
+          renderAll();
+          showToast(`Deleted custom problem #${pid}`);
+        }
+        return;
+      }
+
+      // Cheat Sheet Modal
+      const cheatBtn = e.target.closest('.cheat-sheet-btn');
       if (cheatBtn) {
         e.stopPropagation();
         const tid = cheatBtn.getAttribute('data-cheat-topic');
@@ -736,6 +982,8 @@
         return;
       }
 
+      // Toggle Topic Accordion Header
+      const header = e.target.closest('.topic-header');
       if (header) {
         const tid = header.getAttribute('data-topic-id');
         trackerState.collapsedTopics[tid] = !trackerState.collapsedTopics[tid];
@@ -835,6 +1083,7 @@
     window.addEventListener('click', (e) => {
       if (e.target === notesModal) closeNotesModal();
       if (e.target === cheatSheetModal) closeCheatSheetModal();
+      if (e.target === addProblemModal) closeAddProblemModal();
     });
 
     // Close modals on Escape key
@@ -842,6 +1091,7 @@
       if (e.key === 'Escape') {
         if (notesModal.classList.contains('active')) closeNotesModal();
         if (cheatSheetModal.classList.contains('active')) closeCheatSheetModal();
+        if (addProblemModal.classList.contains('active')) closeAddProblemModal();
       }
     });
 
