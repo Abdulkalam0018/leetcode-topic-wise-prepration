@@ -21,6 +21,8 @@ def validate(node, low=-float('inf'), high=float('inf')):
 | [ ] | 235 | [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | **Medium** | `O(H)` | `O(1)` | If both p and q are smaller than root, go left. If both are greater, go right. Otherwise, root is the LCA. |
 | [ ] | 450 | [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) | **Medium** | `O(H)` | `O(H)` | Search key in BST. If found: leaf -> delete; 1 child -> replace with child; 2 children -> replace with inorder successor then delete successor. |
 | [ ] | 700 | [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | **Easy** | `O(H)` | `O(1)` | If val < root.val go left; if val > root.val go right; if equal return root; if null return null. |
+| [ ] | 272 | [Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/) *(Premium - [Free Alt](https://www.lintcode.com/problem/901/))* | **Hard** | `O(H + K)` | `O(H + K)` | Inorder traversal with deque of size k keeping closest values, or two BST predecessor/successor iterator stacks simulating two pointers converging towards target. |
+| [ ] | 1373 | [Maximum Sum BST in Binary Tree](https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/) | **Hard** | `O(N)` | `O(H)` | Post-order DFS returning (is_bst, min_val, max_val, sum). Valid BST if left.is_bst and right.is_bst and left.max < root.val < right.min. Track global max sum. |
 
 ---
 
@@ -177,6 +179,59 @@ def validate(node, low=-float('inf'), high=float('inf')):
 ```python
 # Solution template for LC 700 - Search in a Binary Search Tree
 # Time: O(H), Space: O(1)
+
+```
+
+---
+
+### LeetCode 272: [Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(H + K)`
+- **Target Space Complexity:** `O(H + K)`
+- **LeetCode Premium Note:** Premium problem. [Free LintCode Mirror](https://www.lintcode.com/problem/901/)
+- **Core Intuition:** Inorder traversal with deque of size k keeping closest values, or two BST predecessor/successor iterator stacks simulating two pointers converging towards target.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 272 - Closest Binary Search Tree Value II
+# Time: O(H + K), Space: O(H + K)
+
+```
+
+---
+
+### LeetCode 1373: [Maximum Sum BST in Binary Tree](https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(H)`
+- **Core Intuition:** Post-order DFS returning (is_bst, min_val, max_val, sum). Valid BST if left.is_bst and right.is_bst and left.max < root.val < right.min. Track global max sum.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1373 - Maximum Sum BST in Binary Tree
+# Time: O(N), Space: O(H)
 
 ```
 

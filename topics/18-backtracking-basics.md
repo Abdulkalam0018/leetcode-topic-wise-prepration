@@ -25,6 +25,7 @@ def backtrack(start, path):
 | [ ] | 78 | [Subsets](https://leetcode.com/problems/subsets/) | **Medium** | `O(N * 2^N)` | `O(N)` | Power set: at each index, choose to include nums[i] or explore choices i..n. Append snapshot of path at every step. |
 | [ ] | 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | **Medium** | `O(N * 2^N)` | `O(N)` | Sort array with duplicates. In loop for i in start..n, skip if i > start and nums[i] == nums[i-1]. |
 | [ ] | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | **Medium** | `O(N^(T/M))` | `O(T/M)` | Sort candidates. Backtrack allowing same element reuse: recurse with same start index i, decrease target. |
+| [ ] | 282 | [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/) | **Hard** | `O(4^N)` | `O(N)` | DFS backtracking inserting '+', '-', or '*' between digits. Track current value and previous added operand to reverse last addition when multiplying: (curr - prev) + prev * next. |
 
 ---
 
@@ -181,6 +182,32 @@ def backtrack(start, path):
 ```python
 # Solution template for LC 39 - Combination Sum
 # Time: O(N^(T/M)), Space: O(T/M)
+
+```
+
+---
+
+### LeetCode 282: [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(4^N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** DFS backtracking inserting '+', '-', or '*' between digits. Track current value and previous added operand to reverse last addition when multiplying: (curr - prev) + prev * next.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 282 - Expression Add Operators
+# Time: O(4^N), Space: O(N)
 
 ```
 

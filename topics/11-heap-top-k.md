@@ -24,6 +24,10 @@ for x in nums:
 | [ ] | 703 | [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | **Easy** | `O(log K) per add` | `O(K)` | Maintain min-heap of size k storing largest elements seen so far. Root is always the kth largest. |
 | [ ] | 973 | [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | **Medium** | `O(N log K)` | `O(K)` | Max-heap of size k by Euclidean distance x^2 + y^2, or QuickSelect to partition k closest points. |
 | [ ] | 1046 | [Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | **Easy** | `O(N log N)` | `O(N)` | Max-heap (negate values in Python). Pop top two stones, push difference if not zero. |
+| [ ] | 218 | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/) | **Hard** | `O(N log N)` | `O(N)` | Sweep-line over sorted critical x-coordinates (start events with -height, end events with +height). Use max-heap with lazy removal; record key points when max height changes. |
+| [ ] | 295 | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | **Hard** | `O(log N) add, O(1) find` | `O(N)` | Two heaps: max-heap 'small' stores the lower half, min-heap 'large' stores the upper half. Balance sizes such that len(small) == len(large) or len(small) == len(large) + 1. |
+| [ ] | 630 | [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) | **Hard** | `O(N log N)` | `O(N)` | Sort courses by lastDay deadline. Greedily take courses accumulating total_time and pushing duration into max-heap. If total_time > lastDay, evict max-duration course. |
+| [ ] | 632 | [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/) | **Hard** | `O(N log K)` | `O(K)` | Min-heap storing (val, list_idx, elem_idx) for the current element of each of the K lists. Maintain current_max. Range is current_max - heap.min; advance min pointer. |
 
 ---
 
@@ -180,6 +184,110 @@ for x in nums:
 ```python
 # Solution template for LC 1046 - Last Stone Weight
 # Time: O(N log N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 218: [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Sweep-line over sorted critical x-coordinates (start events with -height, end events with +height). Use max-heap with lazy removal; record key points when max height changes.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 218 - The Skyline Problem
+# Time: O(N log N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 295: [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(log N) add, O(1) find`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Two heaps: max-heap 'small' stores the lower half, min-heap 'large' stores the upper half. Balance sizes such that len(small) == len(large) or len(small) == len(large) + 1.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 295 - Find Median from Data Stream
+# Time: O(log N) add, O(1) find, Space: O(N)
+
+```
+
+---
+
+### LeetCode 630: [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Sort courses by lastDay deadline. Greedily take courses accumulating total_time and pushing duration into max-heap. If total_time > lastDay, evict max-duration course.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 630 - Course Schedule III
+# Time: O(N log N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 632: [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log K)`
+- **Target Space Complexity:** `O(K)`
+- **Core Intuition:** Min-heap storing (val, list_idx, elem_idx) for the current element of each of the K lists. Maintain current_max. Range is current_max - heap.min; advance min pointer.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 632 - Smallest Range Covering Elements from K Lists
+# Time: O(N log K), Space: O(K)
 
 ```
 

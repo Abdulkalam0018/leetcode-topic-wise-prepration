@@ -27,6 +27,8 @@ while pq:
 | [ ] | 1631 | [Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) | **Medium** | `O(R * C log(R * C))` | `O(R * C)` | Dijkstra on 2D grid where edge weight is abs(height[r2][c2] - height[r1][c1]), minimizing max effort. |
 | [ ] | 1334 | [Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) | **Medium** | `O(N^3)` | `O(N^2)` | Floyd-Warshall all-pairs shortest paths. For each city, count reachable neighbors within distance threshold. |
 | [ ] | 1976 | [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/) | **Medium** | `O(E log V)` | `O(V + E)` | Dijkstra keeping dist[] and ways[] modulo 10^9+7. If shorter path found, update ways; if equal, add ways. |
+| [ ] | 815 | [Bus Routes](https://leetcode.com/problems/bus-routes/) | **Hard** | `O(N * routes_len)` | `O(N * routes_len)` | Map each bus stop to route indices. BFS where each level represents taking one more bus: from current stop, iterate through unvisited routes and enqueue all their stops. |
+| [ ] | 1293 | [Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | **Hard** | `O(M * N * K)` | `O(M * N * K)` | BFS tracking 3D state (row, col, obstacles_left). Only visit neighbor if remaining obstacle elimination quota is strictly higher than previously seen. |
 
 ---
 
@@ -183,6 +185,58 @@ while pq:
 ```python
 # Solution template for LC 1976 - Number of Ways to Arrive at Destination
 # Time: O(E log V), Space: O(V + E)
+
+```
+
+---
+
+### LeetCode 815: [Bus Routes](https://leetcode.com/problems/bus-routes/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N * routes_len)`
+- **Target Space Complexity:** `O(N * routes_len)`
+- **Core Intuition:** Map each bus stop to route indices. BFS where each level represents taking one more bus: from current stop, iterate through unvisited routes and enqueue all their stops.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 815 - Bus Routes
+# Time: O(N * routes_len), Space: O(N * routes_len)
+
+```
+
+---
+
+### LeetCode 1293: [Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(M * N * K)`
+- **Target Space Complexity:** `O(M * N * K)`
+- **Core Intuition:** BFS tracking 3D state (row, col, obstacles_left). Only visit neighbor if remaining obstacle elimination quota is strictly higher than previously seen.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1293 - Shortest Path in a Grid with Obstacles Elimination
+# Time: O(M * N * K), Space: O(M * N * K)
 
 ```
 

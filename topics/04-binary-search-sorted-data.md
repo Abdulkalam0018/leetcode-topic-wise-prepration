@@ -27,6 +27,9 @@ return -1
 | [ ] | 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | **Medium** | `O(log N)` | `O(1)` | Compare nums[mid] with nums[right]. If nums[mid] > nums[right], min is in right half; else in left half. |
 | [ ] | 162 | [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | **Medium** | `O(log N)` | `O(1)` | Compare nums[mid] with nums[mid + 1]. If ascending, a peak must lie on the right; otherwise on the left. |
 | [ ] | 704 | [Binary Search](https://leetcode.com/problems/binary-search/) | **Easy** | `O(log N)` | `O(1)` | Classic binary search template. Maintain left <= right, check nums[mid] against target. |
+| [ ] | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | **Hard** | `O(log(min(M, N)))` | `O(1)` | Binary search partition cut on the smaller array such that left elements are <= right elements across both arrays; partition median calculation. |
+| [ ] | 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) | **Hard** | `O(log N) avg, O(N) worst` | `O(1)` | Modified binary search: if nums[mid] > nums[right] search right; if nums[mid] < nums[right] search left; if nums[mid] == nums[right] decrement right-- to handle duplicates. |
+| [ ] | 315 | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | **Hard** | `O(N log N)` | `O(N)` | Merge sort with index tracking: when placing right element before left, count inversions; or traverse backwards with Fenwick tree / Binary Indexed Tree on coordinate-compressed values. |
 
 ---
 
@@ -183,6 +186,84 @@ return -1
 ```python
 # Solution template for LC 704 - Binary Search
 # Time: O(log N), Space: O(1)
+
+```
+
+---
+
+### LeetCode 4: [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(log(min(M, N)))`
+- **Target Space Complexity:** `O(1)`
+- **Core Intuition:** Binary search partition cut on the smaller array such that left elements are <= right elements across both arrays; partition median calculation.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 4 - Median of Two Sorted Arrays
+# Time: O(log(min(M, N))), Space: O(1)
+
+```
+
+---
+
+### LeetCode 154: [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(log N) avg, O(N) worst`
+- **Target Space Complexity:** `O(1)`
+- **Core Intuition:** Modified binary search: if nums[mid] > nums[right] search right; if nums[mid] < nums[right] search left; if nums[mid] == nums[right] decrement right-- to handle duplicates.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 154 - Find Minimum in Rotated Sorted Array II
+# Time: O(log N) avg, O(N) worst, Space: O(1)
+
+```
+
+---
+
+### LeetCode 315: [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Merge sort with index tracking: when placing right element before left, count inversions; or traverse backwards with Fenwick tree / Binary Indexed Tree on coordinate-compressed values.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 315 - Count of Smaller Numbers After Self
+# Time: O(N log N), Space: O(N)
 
 ```
 

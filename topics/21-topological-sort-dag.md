@@ -28,6 +28,7 @@ while q:
 | [ ] | 1462 | [Course Schedule IV](https://leetcode.com/problems/course-schedule-iv/) | **Medium** | `O(V^3 + Q)` | `O(V^2)` | Floyd-Warshall transitive closure matrix reachable[u][v] or BFS/DFS per query/prerequisite. |
 | [ ] | 1203 | [Sort Items by Groups Respecting Dependencies](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/) | **Hard** | `O(V + E)` | `O(V + E)` | Double topological sort: first sort groups DAG, then sort items within each group DAG. |
 | [ ] | 2115 | [Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/) | **Medium** | `O(V + E)` | `O(V + E)` | Topological sort: treat recipes and ingredients as nodes. Initialize queue with available supplies. |
+| [ ] | 269 | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) *(Premium - [Free Alt](https://www.lintcode.com/problem/892/))* | **Hard** | `O(C)` | `O(U + min(U^2, N))` | Compare adjacent words in dictionary to find the first differing character and add directed edge u -> v. Run Kahn's algorithm or DFS cycle detection for topological order. |
 
 ---
 
@@ -184,6 +185,33 @@ while q:
 ```python
 # Solution template for LC 2115 - Find All Possible Recipes from Given Supplies
 # Time: O(V + E), Space: O(V + E)
+
+```
+
+---
+
+### LeetCode 269: [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(C)`
+- **Target Space Complexity:** `O(U + min(U^2, N))`
+- **LeetCode Premium Note:** Premium problem. [Free LintCode Mirror](https://www.lintcode.com/problem/892/)
+- **Core Intuition:** Compare adjacent words in dictionary to find the first differing character and add directed edge u -> v. Run Kahn's algorithm or DFS cycle detection for topological order.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 269 - Alien Dictionary
+# Time: O(C), Space: O(U + min(U^2, N))
 
 ```
 

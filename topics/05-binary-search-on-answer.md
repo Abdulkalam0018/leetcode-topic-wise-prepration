@@ -30,6 +30,8 @@ while left <= right:
 | [ ] | 774 | [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1009/))* | **Hard** | `O(N log(Range/eps))` | `O(1)` | Binary search possible max distance D with floating point precision. Count stations needed: sum(floor(diff / D)) <= k. |
 | [ ] | 1283 | [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/) | **Medium** | `O(N log(max))` | `O(1)` | Binary search divisor from 1 to max(nums). Check sum of ceil(num / divisor) <= threshold. |
 | [ ] | 1482 | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/) | **Medium** | `O(N log(max))` | `O(1)` | Binary search days from 1 to max(bloomDay). Check if k adjacent flowers can form m bouquets. |
+| [ ] | 1044 | [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/) | **Hard** | `O(N log N)` | `O(N)` | Binary search the length L of duplicate substring [1, N-1]. Validate existence in O(N) using Rabin-Karp rolling hash with double modulo to avoid collisions. |
+| [ ] | 1231 | [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/) *(Premium - [Free Alt](https://www.lintcode.com/problem/3687/))* | **Hard** | `O(N log(Sum/(K+1)))` | `O(1)` | Binary search the maximum sweetness of your piece [1, sum // (k+1)]. Greedy check: can we form at least k+1 pieces each with sum >= mid? |
 
 ---
 
@@ -187,6 +189,59 @@ while left <= right:
 ```python
 # Solution template for LC 1482 - Minimum Number of Days to Make m Bouquets
 # Time: O(N log(max)), Space: O(1)
+
+```
+
+---
+
+### LeetCode 1044: [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Binary search the length L of duplicate substring [1, N-1]. Validate existence in O(N) using Rabin-Karp rolling hash with double modulo to avoid collisions.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1044 - Longest Duplicate Substring
+# Time: O(N log N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 1231: [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log(Sum/(K+1)))`
+- **Target Space Complexity:** `O(1)`
+- **LeetCode Premium Note:** Premium problem. [Free LintCode Mirror](https://www.lintcode.com/problem/3687/)
+- **Core Intuition:** Binary search the maximum sweetness of your piece [1, sum // (k+1)]. Greedy check: can we form at least k+1 pieces each with sum >= mid?
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1231 - Divide Chocolate
+# Time: O(N log(Sum/(K+1))), Space: O(1)
 
 ```
 

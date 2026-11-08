@@ -28,6 +28,8 @@ class Trie:
 | [ ] | 648 | [Replace Words](https://leetcode.com/problems/replace-words/) | **Medium** | `O(N * L)` | `O(Dict Chars)` | Store dictionary root words in Trie. For each sentence word, walk Trie to find shortest matching prefix. |
 | [ ] | 677 | [Map Sum Pairs](https://leetcode.com/problems/map-sum-pairs/) | **Medium** | `O(L) per op` | `O(Total Chars)` | Trie storing value at word end and sum of subtree values, or compute sum by traversing subtree from prefix node. |
 | [ ] | 1268 | [Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) | **Medium** | `O(N log N + L)` | `O(Total Chars)` | Trie where each node stores up to 3 lexicographically smallest words, or sort products and use binary search per prefix. |
+| [ ] | 336 | [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/) | **Hard** | `O(N * L^2)` | `O(N * L)` | Insert reversed words into Trie. For each word, walk Trie checking if matched prefix has palindromic remainder; or hash map of reversed words splitting into prefix/suffix. |
+| [ ] | 642 | [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1064/))* | **Hard** | `O(L) per char input` | `O(Total Chars)` | Trie where each node stores a hash map/top list of sentence frequencies. Advance pointer with each typed character; '#' updates sentence frequency and resets pointer. |
 
 ---
 
@@ -184,6 +186,59 @@ class Trie:
 ```python
 # Solution template for LC 1268 - Search Suggestions System
 # Time: O(N log N + L), Space: O(Total Chars)
+
+```
+
+---
+
+### LeetCode 336: [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N * L^2)`
+- **Target Space Complexity:** `O(N * L)`
+- **Core Intuition:** Insert reversed words into Trie. For each word, walk Trie checking if matched prefix has palindromic remainder; or hash map of reversed words splitting into prefix/suffix.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 336 - Palindrome Pairs
+# Time: O(N * L^2), Space: O(N * L)
+
+```
+
+---
+
+### LeetCode 642: [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(L) per char input`
+- **Target Space Complexity:** `O(Total Chars)`
+- **LeetCode Premium Note:** Premium problem. [Free LintCode Mirror](https://www.lintcode.com/problem/1064/)
+- **Core Intuition:** Trie where each node stores a hash map/top list of sentence frequencies. Advance pointer with each typed character; '#' updates sentence frequency and resets pointer.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 642 - Design Search Autocomplete System
+# Time: O(L) per char input, Space: O(Total Chars)
 
 ```
 

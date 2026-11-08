@@ -23,6 +23,7 @@ return True
 | [ ] | 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler/) | **Medium** | `O(N)` | `O(26)` | Greedy formula: find max task frequency M and number of tasks with count M. Minimum time is max(len(tasks), (M - 1)*(n + 1) + count_max). |
 | [ ] | 763 | [Partition Labels](https://leetcode.com/problems/partition-labels/) | **Medium** | `O(N)` | `O(26)` | Record last occurrence index of each character. Greedily extend partition end to max(last_idx); partition when i reaches end. |
 | [ ] | 134 | [Gas Station](https://leetcode.com/problems/gas-station/) | **Medium** | `O(N)` | `O(1)` | If sum(gas) < sum(cost), impossible. Otherwise, track running tank; if tank < 0, reset tank = 0 and candidate start = i + 1. |
+| [ ] | 68 | [Text Justification](https://leetcode.com/problems/text-justification/) | **Hard** | `O(N)` | `O(maxWidth)` | Greedily pack words per line up to maxWidth. Distribute extra spaces evenly between word gaps from left to right; left-justify single-word lines and the final line. |
 
 ---
 
@@ -179,6 +180,32 @@ return True
 ```python
 # Solution template for LC 134 - Gas Station
 # Time: O(N), Space: O(1)
+
+```
+
+---
+
+### LeetCode 68: [Text Justification](https://leetcode.com/problems/text-justification/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(maxWidth)`
+- **Core Intuition:** Greedily pack words per line up to maxWidth. Distribute extra spaces evenly between word gaps from left to right; left-justify single-word lines and the final line.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 68 - Text Justification
+# Time: O(N), Space: O(maxWidth)
 
 ```
 

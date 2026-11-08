@@ -25,6 +25,9 @@ def dfs(r, c, word_idx):
 | [ ] | 131 | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) | **Medium** | `O(N * 2^N)` | `O(N)` | Partition palindrome: check if s[start..i] is palindrome. If yes, add substring to path and recurse on i + 1. |
 | [ ] | 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | **Hard** | `O(N!)` | `O(N)` | N-Queens: track occupied columns, positive diagonals (r + c), and negative diagonals (r - c) with sets. |
 | [ ] | 52 | [N-Queens II](https://leetcode.com/problems/n-queens-ii/) | **Hard** | `O(N!)` | `O(N)` | Same as N-Queens (51) but only count valid board configurations instead of building strings. |
+| [ ] | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | **Hard** | `O(9^(empty cells))` | `O(1)` | Backtracking cell by cell: use bitmasks or arrays for row, column, and 3x3 box digit presence. Try valid digits 1-9, recurse to next empty cell, and backtrack. |
+| [ ] | 140 | [Word Break II](https://leetcode.com/problems/word-break-ii/) | **Hard** | `O(2^N)` | `O(N * 2^N)` | DFS backtracking with memoization map {substring: [valid_sentences]}. For prefix matching dictionary word, recurse on remainder and combine results. |
+| [ ] | 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | **Hard** | `O(2^N)` | `O(N)` | First pass counts minimum '(' and ')' to remove. Backtrack removing invalid brackets; skip duplicate adjacent brackets at each decision point to avoid duplicate answers. |
 
 ---
 
@@ -181,6 +184,84 @@ def dfs(r, c, word_idx):
 ```python
 # Solution template for LC 52 - N-Queens II
 # Time: O(N!), Space: O(N)
+
+```
+
+---
+
+### LeetCode 37: [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(9^(empty cells))`
+- **Target Space Complexity:** `O(1)`
+- **Core Intuition:** Backtracking cell by cell: use bitmasks or arrays for row, column, and 3x3 box digit presence. Try valid digits 1-9, recurse to next empty cell, and backtrack.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 37 - Sudoku Solver
+# Time: O(9^(empty cells)), Space: O(1)
+
+```
+
+---
+
+### LeetCode 140: [Word Break II](https://leetcode.com/problems/word-break-ii/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(2^N)`
+- **Target Space Complexity:** `O(N * 2^N)`
+- **Core Intuition:** DFS backtracking with memoization map {substring: [valid_sentences]}. For prefix matching dictionary word, recurse on remainder and combine results.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 140 - Word Break II
+# Time: O(2^N), Space: O(N * 2^N)
+
+```
+
+---
+
+### LeetCode 301: [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(2^N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** First pass counts minimum '(' and ')' to remove. Backtrack removing invalid brackets; skip duplicate adjacent brackets at each decision point to avoid duplicate answers.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 301 - Remove Invalid Parentheses
+# Time: O(2^N), Space: O(N)
 
 ```
 

@@ -29,6 +29,8 @@ for right in range(len(nums)):
 | [ ] | 424 | [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) | **Medium** | `O(N)` | `O(26)` | Track max frequency of any single char in current window. If (window_length - max_freq) > k, shift left pointer. |
 | [ ] | 567 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | **Medium** | `O(N)` | `O(26)` | Fixed-size window equal to len(s1). Track character frequency difference or match count. |
 | [ ] | 904 | [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | **Medium** | `O(N)` | `O(1)` | Longest subarray with at most 2 distinct elements. Use hash map of basket counts; shrink left when map size > 2. |
+| [ ] | 480 | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/) | **Hard** | `O(N log K)` | `O(K)` | Maintain two heaps (max-heap for lower half, min-heap for upper half) with lazy removal of out-of-window elements, or a self-balancing BST/multiset. |
+| [ ] | 992 | [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) | **Hard** | `O(N)` | `O(K)` | Transform 'exactly K distinct' into atMost(K) - atMost(K - 1) using standard two-pointer sliding window with a frequency map. |
 
 ---
 
@@ -185,6 +187,58 @@ for right in range(len(nums)):
 ```python
 # Solution template for LC 904 - Fruit Into Baskets
 # Time: O(N), Space: O(1)
+
+```
+
+---
+
+### LeetCode 480: [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N log K)`
+- **Target Space Complexity:** `O(K)`
+- **Core Intuition:** Maintain two heaps (max-heap for lower half, min-heap for upper half) with lazy removal of out-of-window elements, or a self-balancing BST/multiset.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 480 - Sliding Window Median
+# Time: O(N log K), Space: O(K)
+
+```
+
+---
+
+### LeetCode 992: [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(K)`
+- **Core Intuition:** Transform 'exactly K distinct' into atMost(K) - atMost(K - 1) using standard two-pointer sliding window with a frequency map.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 992 - Subarrays with K Different Integers
+# Time: O(N), Space: O(K)
 
 ```
 

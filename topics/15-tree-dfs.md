@@ -26,6 +26,8 @@ def dfs(node):
 | [ ] | 543 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | **Easy** | `O(N)` | `O(H)` | Post-order DFS returning height. Update global max diameter = max(diameter, left_height + right_height) at each node. |
 | [ ] | 124 | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | **Hard** | `O(N)` | `O(H)` | Post-order DFS returning max single-branch gain max(0, branch). Global max path sum = max(res, root.val + left_gain + right_gain). |
 | [ ] | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | **Easy** | `O(N)` | `O(H)` | Swap root.left and root.right recursively for left and right subtrees. |
+| [ ] | 428 | [Serialize and Deserialize N-ary Tree](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1065/))* | **Hard** | `O(N)` | `O(N)` | Preorder DFS encoding: serialize each node as value followed by its number of children (e.g. 'val child_count'). Deserialize recursively reading child count. |
+| [ ] | 968 | [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/) | **Hard** | `O(N)` | `O(H)` | Post-order bottom-up greedy DFS with 3 states: 0=uncovered, 1=has camera, 2=covered. Place camera at parent if any child is uncovered; if root is uncovered, add camera. |
 
 ---
 
@@ -181,6 +183,59 @@ def dfs(node):
 
 ```python
 # Solution template for LC 226 - Invert Binary Tree
+# Time: O(N), Space: O(H)
+
+```
+
+---
+
+### LeetCode 428: [Serialize and Deserialize N-ary Tree](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(N)`
+- **LeetCode Premium Note:** Premium problem. [Free LintCode Mirror](https://www.lintcode.com/problem/1065/)
+- **Core Intuition:** Preorder DFS encoding: serialize each node as value followed by its number of children (e.g. 'val child_count'). Deserialize recursively reading child count.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 428 - Serialize and Deserialize N-ary Tree
+# Time: O(N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 968: [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(H)`
+- **Core Intuition:** Post-order bottom-up greedy DFS with 3 states: 0=uncovered, 1=has camera, 2=covered. Place camera at parent if any child is uncovered; if root is uncovered, add camera.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 968 - Binary Tree Cameras
 # Time: O(N), Space: O(H)
 
 ```

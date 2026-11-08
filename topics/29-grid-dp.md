@@ -25,6 +25,8 @@ for r in range(m):
 | [ ] | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square/) | **Medium** | `O(M * N)` | `O(N)` | dp[r][c] = 1 + min(dp[r-1][c], dp[r][c-1], dp[r-1][c-1]) when cell is '1'. Track max side length. |
 | [ ] | 931 | [Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/) | **Medium** | `O(N^2)` | `O(N)` | Falling path: dp[r][c] = matrix[r][c] + min(dp[r-1][c-1], dp[r-1][c], dp[r-1][c+1]). Update row by row. |
 | [ ] | 120 | [Triangle](https://leetcode.com/problems/triangle/) | **Medium** | `O(N^2)` | `O(1) in-place` | Bottom-up triangle DP: start from second to last row, triangle[r][c] += min(triangle[r+1][c], triangle[r+1][c+1]). |
+| [ ] | 174 | [Dungeon Game](https://leetcode.com/problems/dungeon-game/) | **Hard** | `O(M * N)` | `O(N)` | Bottom-up DP from bottom-right (princess) to (0,0): `dp[r][c] = max(1, min(dp[r+1][c], dp[r][c+1]) - dungeon[r][c])`. Knight must maintain >= 1 HP. |
+| [ ] | 1463 | [Cherry Pickup II](https://leetcode.com/problems/cherry-pickup-ii/) | **Hard** | `O(Rows * Cols^2)` | `O(Cols^2)` | 3D/2D DP: `dp[r][c1][c2]` = max cherries when robot 1 is at (r, c1) and robot 2 is at (r, c2). Transition explores all 3 x 3 = 9 move combinations of (dc1, dc2). |
 
 ---
 
@@ -181,6 +183,58 @@ for r in range(m):
 ```python
 # Solution template for LC 120 - Triangle
 # Time: O(N^2), Space: O(1) in-place
+
+```
+
+---
+
+### LeetCode 174: [Dungeon Game](https://leetcode.com/problems/dungeon-game/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(M * N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Bottom-up DP from bottom-right (princess) to (0,0): `dp[r][c] = max(1, min(dp[r+1][c], dp[r][c+1]) - dungeon[r][c])`. Knight must maintain >= 1 HP.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 174 - Dungeon Game
+# Time: O(M * N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 1463: [Cherry Pickup II](https://leetcode.com/problems/cherry-pickup-ii/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(Rows * Cols^2)`
+- **Target Space Complexity:** `O(Cols^2)`
+- **Core Intuition:** 3D/2D DP: `dp[r][c1][c2]` = max cherries when robot 1 is at (r, c1) and robot 2 is at (r, c2). Transition explores all 3 x 3 = 9 move combinations of (dc1, dc2).
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 1463 - Cherry Pickup II
+# Time: O(Rows * Cols^2), Space: O(Cols^2)
 
 ```
 

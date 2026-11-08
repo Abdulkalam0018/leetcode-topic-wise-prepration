@@ -24,6 +24,9 @@ for i, num in enumerate(nums):
 | [ ] | 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | **Hard** | `O(N)` | `O(N)` | Monotonic increasing stack of indices. When popping height h, width = (current_idx - 1) - stack_top. Sentinel 0 at ends. |
 | [ ] | 85 | [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | **Hard** | `O(R * C)` | `O(C)` | Convert 2D matrix into cumulative histogram heights row by row. Run largest rectangle in histogram (LC 84) on each row. |
 | [ ] | 901 | [Online Stock Span](https://leetcode.com/problems/online-stock-span/) | **Medium** | `O(1) amortized` | `O(N)` | Monotonic decreasing stack of pairs (price, span). While price >= stack top, accumulate spans. |
+| [ ] | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | **Hard** | `O(N)` | `O(N)` | Stack initialized with sentinel -1 storing indices of unmatched parentheses. Pop on ')'; valid substring length is current_idx - stack.top(). |
+| [ ] | 224 | [Basic Calculator](https://leetcode.com/problems/basic-calculator/) | **Hard** | `O(N)` | `O(N)` | Stack storing (running_res, current_sign) upon entering '('. Evaluate terms linearly using running sum and sign (+1 / -1); pop and combine on ')'. |
+| [ ] | 316 | [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/) | **Medium** | `O(N)` | `O(26)` | Monotonic increasing stack of characters. Pop top if current char < top AND top char appears later in string (last_occurrence[top] > i). Track visited set. |
 
 ---
 
@@ -180,6 +183,84 @@ for i, num in enumerate(nums):
 ```python
 # Solution template for LC 901 - Online Stock Span
 # Time: O(1) amortized, Space: O(N)
+
+```
+
+---
+
+### LeetCode 32: [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Stack initialized with sentinel -1 storing indices of unmatched parentheses. Pop on ')'; valid substring length is current_idx - stack.top().
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 32 - Longest Valid Parentheses
+# Time: O(N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 224: [Basic Calculator](https://leetcode.com/problems/basic-calculator/)
+
+- **Difficulty:** Hard
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(N)`
+- **Core Intuition:** Stack storing (running_res, current_sign) upon entering '('. Evaluate terms linearly using running sum and sign (+1 / -1); pop and combine on ')'.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 224 - Basic Calculator
+# Time: O(N), Space: O(N)
+
+```
+
+---
+
+### LeetCode 316: [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)
+
+- **Difficulty:** Medium
+- **Target Time Complexity:** `O(N)`
+- **Target Space Complexity:** `O(26)`
+- **Core Intuition:** Monotonic increasing stack of characters. Pop top if current char < top AND top char appears later in string (last_occurrence[top] > i). Track visited set.
+
+#### Approach Breakdown
+1. **State / Pointers:** Identify key invariants and boundaries.
+2. **Transitions:** Update running state as the window/pointers/data structure evolves.
+3. **Termination:** Ensure edge cases (empty inputs, single elements, boundary bounds) are guarded.
+
+#### 📝 My Personal Revision Notes
+> *Write your personal notes, edge cases you missed, or reflections below:*
+- **Tricky Edge Cases:** 
+- **Alternative Approaches:** 
+- **Key Takeaway / Pattern Trigger:** 
+
+```python
+# Solution template for LC 316 - Remove Duplicate Letters
+# Time: O(N), Space: O(26)
 
 ```
 

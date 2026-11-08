@@ -1,11 +1,11 @@
 # 🚀 LeetCode Topic-Wise Preparation & Revision Tracker
 
-[![Problems](https://img.shields.io/badge/Problems-181-blue.svg)](#problems-matrix) 
+[![Problems](https://img.shields.io/badge/Problems-228-blue.svg)](#problems-matrix) 
 [![Topics](https://img.shields.io/badge/Topics-30-orange.svg)](#topic-breakdown) 
 [![Interactive Tracker](https://img.shields.io/badge/Interactive_App-index.html-brightgreen.svg)](./index.html) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A complete, structured curriculum of **181 high-yield LeetCode problems** categorized across **30 essential DSA patterns**.
+A complete, structured curriculum of **228 high-yield LeetCode problems** categorized across **30 essential DSA patterns**.
 
 This repository is equipped with both a **comprehensive Markdown revision guide** and an **interactive Web Revision Dashboard** (`index.html`) featuring real-time progress tracking, mark-as-done toggles, revision bookmarks, and local note-taking capabilities.
 
@@ -58,46 +58,46 @@ python3 -m http.server 8000
 
 | Total Topics | Total Problems | Easy Problems 🟢 | Medium Problems 🟡 | Hard Problems 🔴 |
 |:------------:|:--------------:|:----------------:|:------------------:|:----------------:|
-| **30** | **181** | **30** | **126** | **25** |
+| **30** | **228** | **30** | **127** | **71** |
 
 ## 📚 30 DSA Topics Index
 
 | # | Topic Name | Problems | Study Guide Link |
 |:--:|:-----------|:--------:|:-----------------|
-| 1 | **Sliding Window** | 6 | [Open Topic Guide & Notes 📖](topics/01-sliding-window.md) |
+| 1 | **Sliding Window** | 8 | [Open Topic Guide & Notes 📖](topics/01-sliding-window.md) |
 | 2 | **Two Pointers** | 6 | [Open Topic Guide & Notes 📖](topics/02-two-pointers.md) |
 | 3 | **Fast/Slow Pointers (Linked List)** | 6 | [Open Topic Guide & Notes 📖](topics/03-fast-slow-pointers.md) |
-| 4 | **Binary Search on Sorted Data** | 6 | [Open Topic Guide & Notes 📖](topics/04-binary-search-sorted-data.md) |
-| 5 | **Binary Search on Answer** | 6 | [Open Topic Guide & Notes 📖](topics/05-binary-search-on-answer.md) |
-| 6 | **Hashing / Frequency Maps** | 6 | [Open Topic Guide & Notes 📖](topics/06-hashing-frequency-maps.md) |
+| 4 | **Binary Search on Sorted Data** | 9 | [Open Topic Guide & Notes 📖](topics/04-binary-search-sorted-data.md) |
+| 5 | **Binary Search on Answer** | 8 | [Open Topic Guide & Notes 📖](topics/05-binary-search-on-answer.md) |
+| 6 | **Hashing / Frequency Maps** | 10 | [Open Topic Guide & Notes 📖](topics/06-hashing-frequency-maps.md) |
 | 7 | **Prefix Sum / Running Sum** | 6 | [Open Topic Guide & Notes 📖](topics/07-prefix-sum-running-sum.md) |
 | 8 | **Difference Array / Range Updates** | 6 | [Open Topic Guide & Notes 📖](topics/08-difference-array-range-updates.md) |
-| 9 | **Monotonic Stack** | 6 | [Open Topic Guide & Notes 📖](topics/09-monotonic-stack.md) |
+| 9 | **Monotonic Stack** | 9 | [Open Topic Guide & Notes 📖](topics/09-monotonic-stack.md) |
 | 10 | **Monotonic Queue / Deque** | 6 | [Open Topic Guide & Notes 📖](topics/10-monotonic-queue-deque.md) |
-| 11 | **Heap / Top K** | 6 | [Open Topic Guide & Notes 📖](topics/11-heap-top-k.md) |
+| 11 | **Heap / Top K** | 10 | [Open Topic Guide & Notes 📖](topics/11-heap-top-k.md) |
 | 12 | **Intervals** | 7 | [Open Topic Guide & Notes 📖](topics/12-intervals.md) |
-| 13 | **Greedy Scheduling / Sorting** | 6 | [Open Topic Guide & Notes 📖](topics/13-greedy-scheduling-sorting.md) |
+| 13 | **Greedy Scheduling / Sorting** | 7 | [Open Topic Guide & Notes 📖](topics/13-greedy-scheduling-sorting.md) |
 | 14 | **Linked List Manipulation** | 6 | [Open Topic Guide & Notes 📖](topics/14-linked-list-manipulation.md) |
-| 15 | **Tree DFS** | 6 | [Open Topic Guide & Notes 📖](topics/15-tree-dfs.md) |
+| 15 | **Tree DFS** | 8 | [Open Topic Guide & Notes 📖](topics/15-tree-dfs.md) |
 | 16 | **Tree BFS / Level Order** | 6 | [Open Topic Guide & Notes 📖](topics/16-tree-bfs-level-order.md) |
-| 17 | **BST Problems** | 6 | [Open Topic Guide & Notes 📖](topics/17-bst-problems.md) |
-| 18 | **Backtracking Basics** | 6 | [Open Topic Guide & Notes 📖](topics/18-backtracking-basics.md) |
-| 19 | **Backtracking with Constraints** | 6 | [Open Topic Guide & Notes 📖](topics/19-backtracking-with-constraints.md) |
-| 20 | **Graph BFS / DFS** | 6 | [Open Topic Guide & Notes 📖](topics/20-graph-bfs-dfs.md) |
-| 21 | **Topological Sort / DAG** | 6 | [Open Topic Guide & Notes 📖](topics/21-topological-sort-dag.md) |
+| 17 | **BST Problems** | 8 | [Open Topic Guide & Notes 📖](topics/17-bst-problems.md) |
+| 18 | **Backtracking Basics** | 7 | [Open Topic Guide & Notes 📖](topics/18-backtracking-basics.md) |
+| 19 | **Backtracking with Constraints** | 9 | [Open Topic Guide & Notes 📖](topics/19-backtracking-with-constraints.md) |
+| 20 | **Graph BFS / DFS** | 11 | [Open Topic Guide & Notes 📖](topics/20-graph-bfs-dfs.md) |
+| 21 | **Topological Sort / DAG** | 7 | [Open Topic Guide & Notes 📖](topics/21-topological-sort-dag.md) |
 | 22 | **Union Find / DSU** | 6 | [Open Topic Guide & Notes 📖](topics/22-union-find-dsu.md) |
-| 23 | **Shortest Path** | 6 | [Open Topic Guide & Notes 📖](topics/23-shortest-path.md) |
+| 23 | **Shortest Path** | 8 | [Open Topic Guide & Notes 📖](topics/23-shortest-path.md) |
 | 24 | **MST / Graph Greedy** | 6 | [Open Topic Guide & Notes 📖](topics/24-mst-graph-greedy.md) |
-| 25 | **Trie** | 6 | [Open Topic Guide & Notes 📖](topics/25-trie.md) |
+| 25 | **Trie** | 8 | [Open Topic Guide & Notes 📖](topics/25-trie.md) |
 | 26 | **Bit Manipulation** | 6 | [Open Topic Guide & Notes 📖](topics/26-bit-manipulation.md) |
-| 27 | **1D DP Basics** | 6 | [Open Topic Guide & Notes 📖](topics/27-1d-dp-basics.md) |
+| 27 | **1D DP Basics** | 10 | [Open Topic Guide & Notes 📖](topics/27-1d-dp-basics.md) |
 | 28 | **Knapsack / Subset DP** | 6 | [Open Topic Guide & Notes 📖](topics/28-knapsack-subset-dp.md) |
-| 29 | **Grid DP** | 6 | [Open Topic Guide & Notes 📖](topics/29-grid-dp.md) |
-| 30 | **String DP / Sequence DP** | 6 | [Open Topic Guide & Notes 📖](topics/30-string-dp-sequence-dp.md) |
+| 29 | **Grid DP** | 8 | [Open Topic Guide & Notes 📖](topics/29-grid-dp.md) |
+| 30 | **String DP / Sequence DP** | 10 | [Open Topic Guide & Notes 📖](topics/30-string-dp-sequence-dp.md) |
 
 ---
 
-## 📑 Complete 181 Problem Roadmap
+## 📑 Complete 228 Problem Roadmap
 
 ### 1. [Sliding Window](topics/01-sliding-window.md)
 
@@ -111,6 +111,8 @@ python3 -m http.server 8000
 | [ ] | 424 | [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) | **Medium** | `O(N)` | `O(26)` | Track max frequency of any single char in current window. If (window_length - max_freq) > k, shift left pointer. | [Notes 📝](topics/01-sliding-window.md#leetcode-424-longest-repeating-character-replacement) |
 | [ ] | 567 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | **Medium** | `O(N)` | `O(26)` | Fixed-size window equal to len(s1). Track character frequency difference or match count. | [Notes 📝](topics/01-sliding-window.md#leetcode-567-permutation-in-string) |
 | [ ] | 904 | [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) | **Medium** | `O(N)` | `O(1)` | Longest subarray with at most 2 distinct elements. Use hash map of basket counts; shrink left when map size > 2. | [Notes 📝](topics/01-sliding-window.md#leetcode-904-fruit-into-baskets) |
+| [ ] | 480 | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/) | **Hard** | `O(N log K)` | `O(K)` | Maintain two heaps (max-heap for lower half, min-heap for upper half) with lazy removal of out-of-window elements, or a self-balancing BST/multiset. | [Notes 📝](topics/01-sliding-window.md#leetcode-480-sliding-window-median) |
+| [ ] | 992 | [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) | **Hard** | `O(N)` | `O(K)` | Transform 'exactly K distinct' into atMost(K) - atMost(K - 1) using standard two-pointer sliding window with a frequency map. | [Notes 📝](topics/01-sliding-window.md#leetcode-992-subarrays-with-k-different-integers) |
 
 ### 2. [Two Pointers](topics/02-two-pointers.md)
 
@@ -150,6 +152,9 @@ python3 -m http.server 8000
 | [ ] | 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | **Medium** | `O(log N)` | `O(1)` | Compare nums[mid] with nums[right]. If nums[mid] > nums[right], min is in right half; else in left half. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-153-find-minimum-in-rotated-sorted-array) |
 | [ ] | 162 | [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | **Medium** | `O(log N)` | `O(1)` | Compare nums[mid] with nums[mid + 1]. If ascending, a peak must lie on the right; otherwise on the left. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-162-find-peak-element) |
 | [ ] | 704 | [Binary Search](https://leetcode.com/problems/binary-search/) | **Easy** | `O(log N)` | `O(1)` | Classic binary search template. Maintain left <= right, check nums[mid] against target. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-704-binary-search) |
+| [ ] | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | **Hard** | `O(log(min(M, N)))` | `O(1)` | Binary search partition cut on the smaller array such that left elements are <= right elements across both arrays; partition median calculation. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-4-median-of-two-sorted-arrays) |
+| [ ] | 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) | **Hard** | `O(log N) avg, O(N) worst` | `O(1)` | Modified binary search: if nums[mid] > nums[right] search right; if nums[mid] < nums[right] search left; if nums[mid] == nums[right] decrement right-- to handle duplicates. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-154-find-minimum-in-rotated-sorted-array-ii) |
+| [ ] | 315 | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | **Hard** | `O(N log N)` | `O(N)` | Merge sort with index tracking: when placing right element before left, count inversions; or traverse backwards with Fenwick tree / Binary Indexed Tree on coordinate-compressed values. | [Notes 📝](topics/04-binary-search-sorted-data.md#leetcode-315-count-of-smaller-numbers-after-self) |
 
 ### 5. [Binary Search on Answer](topics/05-binary-search-on-answer.md)
 
@@ -163,6 +168,8 @@ python3 -m http.server 8000
 | [ ] | 774 | [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1009/))* | **Hard** | `O(N log(Range/eps))` | `O(1)` | Binary search possible max distance D with floating point precision. Count stations needed: sum(floor(diff / D)) <= k. | [Notes 📝](topics/05-binary-search-on-answer.md#leetcode-774-minimize-max-distance-to-gas-station) |
 | [ ] | 1283 | [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/) | **Medium** | `O(N log(max))` | `O(1)` | Binary search divisor from 1 to max(nums). Check sum of ceil(num / divisor) <= threshold. | [Notes 📝](topics/05-binary-search-on-answer.md#leetcode-1283-find-the-smallest-divisor-given-a-threshold) |
 | [ ] | 1482 | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/) | **Medium** | `O(N log(max))` | `O(1)` | Binary search days from 1 to max(bloomDay). Check if k adjacent flowers can form m bouquets. | [Notes 📝](topics/05-binary-search-on-answer.md#leetcode-1482-minimum-number-of-days-to-make-m-bouquets) |
+| [ ] | 1044 | [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/) | **Hard** | `O(N log N)` | `O(N)` | Binary search the length L of duplicate substring [1, N-1]. Validate existence in O(N) using Rabin-Karp rolling hash with double modulo to avoid collisions. | [Notes 📝](topics/05-binary-search-on-answer.md#leetcode-1044-longest-duplicate-substring) |
+| [ ] | 1231 | [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/) *(Premium - [Free Alt](https://www.lintcode.com/problem/3687/))* | **Hard** | `O(N log(Sum/(K+1)))` | `O(1)` | Binary search the maximum sweetness of your piece [1, sum // (k+1)]. Greedy check: can we form at least k+1 pieces each with sum >= mid? | [Notes 📝](topics/05-binary-search-on-answer.md#leetcode-1231-divide-chocolate) |
 
 ### 6. [Hashing / Frequency Maps](topics/06-hashing-frequency-maps.md)
 
@@ -176,6 +183,10 @@ python3 -m http.server 8000
 | [ ] | 217 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | **Easy** | `O(N)` | `O(N)` | Use a hash set to detect duplicate elements in a single pass. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-217-contains-duplicate) |
 | [ ] | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | **Easy** | `O(N)` | `O(1)` | Compare character counts between two strings using an array of size 26 or hash map. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-242-valid-anagram) |
 | [ ] | 347 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | **Medium** | `O(N)` | `O(N)` | Count frequencies with hash map. Bucket sort by frequency or use min-heap of size k to extract top k elements. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-347-top-k-frequent-elements) |
+| [ ] | 41 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | **Hard** | `O(N)` | `O(1)` | In-place cyclic sort/hashing: place each positive integer x in 1..n at index x - 1 using swaps. First index where nums[i] != i + 1 is the missing positive. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-41-first-missing-positive) |
+| [ ] | 273 | [Integer to English Words](https://leetcode.com/problems/integer-to-english-words/) | **Hard** | `O(1)` | `O(1)` | Break integer into 3-digit chunks (Billion, Million, Thousand, Units). Use lookup tables for units (1-19) and tens (20-90) and process recursively. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-273-integer-to-english-words) |
+| [ ] | 432 | [All O`one Data Structure](https://leetcode.com/problems/all-oone-data-structure/) | **Hard** | `O(1) all ops` | `O(N)` | Doubly Linked List of frequency buckets + hash map of key to bucket node. Move keys between adjacent count buckets on inc and dec; head/tail give min and max in O(1). | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-432-all-oone-data-structure) |
+| [ ] | 460 | [LFU Cache](https://leetcode.com/problems/lfu-cache/) | **Hard** | `O(1) get & put` | `O(capacity)` | Hash map key -> (value, freq) + hash map freq -> DoublyLinkedList of keys (ordered by recency), tracking min_freq. Evict LRU from min_freq list. | [Notes 📝](topics/06-hashing-frequency-maps.md#leetcode-460-lfu-cache) |
 
 ### 7. [Prefix Sum / Running Sum](topics/07-prefix-sum-running-sum.md)
 
@@ -215,6 +226,9 @@ python3 -m http.server 8000
 | [ ] | 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | **Hard** | `O(N)` | `O(N)` | Monotonic increasing stack of indices. When popping height h, width = (current_idx - 1) - stack_top. Sentinel 0 at ends. | [Notes 📝](topics/09-monotonic-stack.md#leetcode-84-largest-rectangle-in-histogram) |
 | [ ] | 85 | [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | **Hard** | `O(R * C)` | `O(C)` | Convert 2D matrix into cumulative histogram heights row by row. Run largest rectangle in histogram (LC 84) on each row. | [Notes 📝](topics/09-monotonic-stack.md#leetcode-85-maximal-rectangle) |
 | [ ] | 901 | [Online Stock Span](https://leetcode.com/problems/online-stock-span/) | **Medium** | `O(1) amortized` | `O(N)` | Monotonic decreasing stack of pairs (price, span). While price >= stack top, accumulate spans. | [Notes 📝](topics/09-monotonic-stack.md#leetcode-901-online-stock-span) |
+| [ ] | 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | **Hard** | `O(N)` | `O(N)` | Stack initialized with sentinel -1 storing indices of unmatched parentheses. Pop on ')'; valid substring length is current_idx - stack.top(). | [Notes 📝](topics/09-monotonic-stack.md#leetcode-32-longest-valid-parentheses) |
+| [ ] | 224 | [Basic Calculator](https://leetcode.com/problems/basic-calculator/) | **Hard** | `O(N)` | `O(N)` | Stack storing (running_res, current_sign) upon entering '('. Evaluate terms linearly using running sum and sign (+1 / -1); pop and combine on ')'. | [Notes 📝](topics/09-monotonic-stack.md#leetcode-224-basic-calculator) |
+| [ ] | 316 | [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/) | **Medium** | `O(N)` | `O(26)` | Monotonic increasing stack of characters. Pop top if current char < top AND top char appears later in string (last_occurrence[top] > i). Track visited set. | [Notes 📝](topics/09-monotonic-stack.md#leetcode-316-remove-duplicate-letters) |
 
 ### 10. [Monotonic Queue / Deque](topics/10-monotonic-queue-deque.md)
 
@@ -241,6 +255,10 @@ python3 -m http.server 8000
 | [ ] | 703 | [Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | **Easy** | `O(log K) per add` | `O(K)` | Maintain min-heap of size k storing largest elements seen so far. Root is always the kth largest. | [Notes 📝](topics/11-heap-top-k.md#leetcode-703-kth-largest-element-in-a-stream) |
 | [ ] | 973 | [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | **Medium** | `O(N log K)` | `O(K)` | Max-heap of size k by Euclidean distance x^2 + y^2, or QuickSelect to partition k closest points. | [Notes 📝](topics/11-heap-top-k.md#leetcode-973-k-closest-points-to-origin) |
 | [ ] | 1046 | [Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | **Easy** | `O(N log N)` | `O(N)` | Max-heap (negate values in Python). Pop top two stones, push difference if not zero. | [Notes 📝](topics/11-heap-top-k.md#leetcode-1046-last-stone-weight) |
+| [ ] | 218 | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/) | **Hard** | `O(N log N)` | `O(N)` | Sweep-line over sorted critical x-coordinates (start events with -height, end events with +height). Use max-heap with lazy removal; record key points when max height changes. | [Notes 📝](topics/11-heap-top-k.md#leetcode-218-the-skyline-problem) |
+| [ ] | 295 | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | **Hard** | `O(log N) add, O(1) find` | `O(N)` | Two heaps: max-heap 'small' stores the lower half, min-heap 'large' stores the upper half. Balance sizes such that len(small) == len(large) or len(small) == len(large) + 1. | [Notes 📝](topics/11-heap-top-k.md#leetcode-295-find-median-from-data-stream) |
+| [ ] | 630 | [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/) | **Hard** | `O(N log N)` | `O(N)` | Sort courses by lastDay deadline. Greedily take courses accumulating total_time and pushing duration into max-heap. If total_time > lastDay, evict max-duration course. | [Notes 📝](topics/11-heap-top-k.md#leetcode-630-course-schedule-iii) |
+| [ ] | 632 | [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/) | **Hard** | `O(N log K)` | `O(K)` | Min-heap storing (val, list_idx, elem_idx) for the current element of each of the K lists. Maintain current_max. Range is current_max - heap.min; advance min pointer. | [Notes 📝](topics/11-heap-top-k.md#leetcode-632-smallest-range-covering-elements-from-k-lists) |
 
 ### 12. [Intervals](topics/12-intervals.md)
 
@@ -268,6 +286,7 @@ python3 -m http.server 8000
 | [ ] | 621 | [Task Scheduler](https://leetcode.com/problems/task-scheduler/) | **Medium** | `O(N)` | `O(26)` | Greedy formula: find max task frequency M and number of tasks with count M. Minimum time is max(len(tasks), (M - 1)*(n + 1) + count_max). | [Notes 📝](topics/13-greedy-scheduling-sorting.md#leetcode-621-task-scheduler) |
 | [ ] | 763 | [Partition Labels](https://leetcode.com/problems/partition-labels/) | **Medium** | `O(N)` | `O(26)` | Record last occurrence index of each character. Greedily extend partition end to max(last_idx); partition when i reaches end. | [Notes 📝](topics/13-greedy-scheduling-sorting.md#leetcode-763-partition-labels) |
 | [ ] | 134 | [Gas Station](https://leetcode.com/problems/gas-station/) | **Medium** | `O(N)` | `O(1)` | If sum(gas) < sum(cost), impossible. Otherwise, track running tank; if tank < 0, reset tank = 0 and candidate start = i + 1. | [Notes 📝](topics/13-greedy-scheduling-sorting.md#leetcode-134-gas-station) |
+| [ ] | 68 | [Text Justification](https://leetcode.com/problems/text-justification/) | **Hard** | `O(N)` | `O(maxWidth)` | Greedily pack words per line up to maxWidth. Distribute extra spaces evenly between word gaps from left to right; left-justify single-word lines and the final line. | [Notes 📝](topics/13-greedy-scheduling-sorting.md#leetcode-68-text-justification) |
 
 ### 14. [Linked List Manipulation](topics/14-linked-list-manipulation.md)
 
@@ -294,6 +313,8 @@ python3 -m http.server 8000
 | [ ] | 543 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | **Easy** | `O(N)` | `O(H)` | Post-order DFS returning height. Update global max diameter = max(diameter, left_height + right_height) at each node. | [Notes 📝](topics/15-tree-dfs.md#leetcode-543-diameter-of-binary-tree) |
 | [ ] | 124 | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | **Hard** | `O(N)` | `O(H)` | Post-order DFS returning max single-branch gain max(0, branch). Global max path sum = max(res, root.val + left_gain + right_gain). | [Notes 📝](topics/15-tree-dfs.md#leetcode-124-binary-tree-maximum-path-sum) |
 | [ ] | 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | **Easy** | `O(N)` | `O(H)` | Swap root.left and root.right recursively for left and right subtrees. | [Notes 📝](topics/15-tree-dfs.md#leetcode-226-invert-binary-tree) |
+| [ ] | 428 | [Serialize and Deserialize N-ary Tree](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1065/))* | **Hard** | `O(N)` | `O(N)` | Preorder DFS encoding: serialize each node as value followed by its number of children (e.g. 'val child_count'). Deserialize recursively reading child count. | [Notes 📝](topics/15-tree-dfs.md#leetcode-428-serialize-and-deserialize-n-ary-tree) |
+| [ ] | 968 | [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/) | **Hard** | `O(N)` | `O(H)` | Post-order bottom-up greedy DFS with 3 states: 0=uncovered, 1=has camera, 2=covered. Place camera at parent if any child is uncovered; if root is uncovered, add camera. | [Notes 📝](topics/15-tree-dfs.md#leetcode-968-binary-tree-cameras) |
 
 ### 16. [Tree BFS / Level Order](topics/16-tree-bfs-level-order.md)
 
@@ -320,6 +341,8 @@ python3 -m http.server 8000
 | [ ] | 235 | [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | **Medium** | `O(H)` | `O(1)` | If both p and q are smaller than root, go left. If both are greater, go right. Otherwise, root is the LCA. | [Notes 📝](topics/17-bst-problems.md#leetcode-235-lowest-common-ancestor-of-a-binary-search-tree) |
 | [ ] | 450 | [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) | **Medium** | `O(H)` | `O(H)` | Search key in BST. If found: leaf -> delete; 1 child -> replace with child; 2 children -> replace with inorder successor then delete successor. | [Notes 📝](topics/17-bst-problems.md#leetcode-450-delete-node-in-a-bst) |
 | [ ] | 700 | [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | **Easy** | `O(H)` | `O(1)` | If val < root.val go left; if val > root.val go right; if equal return root; if null return null. | [Notes 📝](topics/17-bst-problems.md#leetcode-700-search-in-a-binary-search-tree) |
+| [ ] | 272 | [Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/) *(Premium - [Free Alt](https://www.lintcode.com/problem/901/))* | **Hard** | `O(H + K)` | `O(H + K)` | Inorder traversal with deque of size k keeping closest values, or two BST predecessor/successor iterator stacks simulating two pointers converging towards target. | [Notes 📝](topics/17-bst-problems.md#leetcode-272-closest-binary-search-tree-value-ii) |
+| [ ] | 1373 | [Maximum Sum BST in Binary Tree](https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/) | **Hard** | `O(N)` | `O(H)` | Post-order DFS returning (is_bst, min_val, max_val, sum). Valid BST if left.is_bst and right.is_bst and left.max < root.val < right.min. Track global max sum. | [Notes 📝](topics/17-bst-problems.md#leetcode-1373-maximum-sum-bst-in-binary-tree) |
 
 ### 18. [Backtracking Basics](topics/18-backtracking-basics.md)
 
@@ -333,6 +356,7 @@ python3 -m http.server 8000
 | [ ] | 78 | [Subsets](https://leetcode.com/problems/subsets/) | **Medium** | `O(N * 2^N)` | `O(N)` | Power set: at each index, choose to include nums[i] or explore choices i..n. Append snapshot of path at every step. | [Notes 📝](topics/18-backtracking-basics.md#leetcode-78-subsets) |
 | [ ] | 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | **Medium** | `O(N * 2^N)` | `O(N)` | Sort array with duplicates. In loop for i in start..n, skip if i > start and nums[i] == nums[i-1]. | [Notes 📝](topics/18-backtracking-basics.md#leetcode-90-subsets-ii) |
 | [ ] | 39 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | **Medium** | `O(N^(T/M))` | `O(T/M)` | Sort candidates. Backtrack allowing same element reuse: recurse with same start index i, decrease target. | [Notes 📝](topics/18-backtracking-basics.md#leetcode-39-combination-sum) |
+| [ ] | 282 | [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/) | **Hard** | `O(4^N)` | `O(N)` | DFS backtracking inserting '+', '-', or '*' between digits. Track current value and previous added operand to reverse last addition when multiplying: (curr - prev) + prev * next. | [Notes 📝](topics/18-backtracking-basics.md#leetcode-282-expression-add-operators) |
 
 ### 19. [Backtracking with Constraints](topics/19-backtracking-with-constraints.md)
 
@@ -346,6 +370,9 @@ python3 -m http.server 8000
 | [ ] | 131 | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) | **Medium** | `O(N * 2^N)` | `O(N)` | Partition palindrome: check if s[start..i] is palindrome. If yes, add substring to path and recurse on i + 1. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-131-palindrome-partitioning) |
 | [ ] | 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | **Hard** | `O(N!)` | `O(N)` | N-Queens: track occupied columns, positive diagonals (r + c), and negative diagonals (r - c) with sets. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-51-n-queens) |
 | [ ] | 52 | [N-Queens II](https://leetcode.com/problems/n-queens-ii/) | **Hard** | `O(N!)` | `O(N)` | Same as N-Queens (51) but only count valid board configurations instead of building strings. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-52-n-queens-ii) |
+| [ ] | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | **Hard** | `O(9^(empty cells))` | `O(1)` | Backtracking cell by cell: use bitmasks or arrays for row, column, and 3x3 box digit presence. Try valid digits 1-9, recurse to next empty cell, and backtrack. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-37-sudoku-solver) |
+| [ ] | 140 | [Word Break II](https://leetcode.com/problems/word-break-ii/) | **Hard** | `O(2^N)` | `O(N * 2^N)` | DFS backtracking with memoization map {substring: [valid_sentences]}. For prefix matching dictionary word, recurse on remainder and combine results. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-140-word-break-ii) |
+| [ ] | 301 | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | **Hard** | `O(2^N)` | `O(N)` | First pass counts minimum '(' and ')' to remove. Backtrack removing invalid brackets; skip duplicate adjacent brackets at each decision point to avoid duplicate answers. | [Notes 📝](topics/19-backtracking-with-constraints.md#leetcode-301-remove-invalid-parentheses) |
 
 ### 20. [Graph BFS / DFS](topics/20-graph-bfs-dfs.md)
 
@@ -359,6 +386,11 @@ python3 -m http.server 8000
 | [ ] | 994 | [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | **Medium** | `O(M * N)` | `O(M * N)` | Multi-source BFS from all rotten oranges simultaneously. Track minutes until queue empty; check fresh count == 0. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-994-rotting-oranges) |
 | [ ] | 1091 | [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) | **Medium** | `O(N^2)` | `O(N^2)` | BFS in 8 directions from (0,0) to (n-1, n-1) tracking path length. Return -1 if blocked. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-1091-shortest-path-in-binary-matrix) |
 | [ ] | 1254 | [Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/) | **Medium** | `O(M * N)` | `O(M * N)` | Flood fill from boundaries to eliminate open islands, then count remaining unvisited 0-components. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-1254-number-of-closed-islands) |
+| [ ] | 126 | [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/) | **Hard** | `O(N * 26 * L)` | `O(N * L)` | Two-phase: 1) BFS from beginWord to build shortest-path DAG of predecessors level-by-level; 2) DFS backtracking from endWord back to beginWord to construct all shortest ladders. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-126-word-ladder-ii) |
+| [ ] | 317 | [Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/) *(Premium - [Free Alt](https://www.lintcode.com/problem/573/))* | **Hard** | `O(B * M * N)` | `O(M * N)` | BFS from each building, accumulating path distances to empty land cells and incrementing reachable building count. Answer is min total distance for land reaching all buildings. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-317-shortest-distance-from-all-buildings) |
+| [ ] | 329 | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | **Hard** | `O(M * N)` | `O(M * N)` | DFS with memoization: `memo[r][c] = 1 + max(dfs(nr, nc))` for strictly increasing neighbors. Matrix forms a DAG so cycles are impossible. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-329-longest-increasing-path-in-a-matrix) |
+| [ ] | 827 | [Making A Large Island](https://leetcode.com/problems/making-a-large-island/) | **Hard** | `O(N^2)` | `O(N^2)` | DFS to color each connected island with a unique ID (starting from 2) and record {island_id: area}. Then check each '0': potential area = 1 + sum of distinct neighbor island areas. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-827-making-a-large-island) |
+| [ ] | 1192 | [Critical Connections in a Network](https://leetcode.com/problems/critical-connections-in-a-network/) | **Hard** | `O(V + E)` | `O(V + E)` | Tarjan's Bridge-Finding Algorithm: track discovery time rank[] and lowest reachable rank low[]. Edge (u, v) is critical if low[v] > rank[u]. | [Notes 📝](topics/20-graph-bfs-dfs.md#leetcode-1192-critical-connections-in-a-network) |
 
 ### 21. [Topological Sort / DAG](topics/21-topological-sort-dag.md)
 
@@ -372,6 +404,7 @@ python3 -m http.server 8000
 | [ ] | 1462 | [Course Schedule IV](https://leetcode.com/problems/course-schedule-iv/) | **Medium** | `O(V^3 + Q)` | `O(V^2)` | Floyd-Warshall transitive closure matrix reachable[u][v] or BFS/DFS per query/prerequisite. | [Notes 📝](topics/21-topological-sort-dag.md#leetcode-1462-course-schedule-iv) |
 | [ ] | 1203 | [Sort Items by Groups Respecting Dependencies](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/) | **Hard** | `O(V + E)` | `O(V + E)` | Double topological sort: first sort groups DAG, then sort items within each group DAG. | [Notes 📝](topics/21-topological-sort-dag.md#leetcode-1203-sort-items-by-groups-respecting-dependencies) |
 | [ ] | 2115 | [Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/) | **Medium** | `O(V + E)` | `O(V + E)` | Topological sort: treat recipes and ingredients as nodes. Initialize queue with available supplies. | [Notes 📝](topics/21-topological-sort-dag.md#leetcode-2115-find-all-possible-recipes-from-given-supplies) |
+| [ ] | 269 | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) *(Premium - [Free Alt](https://www.lintcode.com/problem/892/))* | **Hard** | `O(C)` | `O(U + min(U^2, N))` | Compare adjacent words in dictionary to find the first differing character and add directed edge u -> v. Run Kahn's algorithm or DFS cycle detection for topological order. | [Notes 📝](topics/21-topological-sort-dag.md#leetcode-269-alien-dictionary) |
 
 ### 22. [Union Find / DSU](topics/22-union-find-dsu.md)
 
@@ -398,6 +431,8 @@ python3 -m http.server 8000
 | [ ] | 1631 | [Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) | **Medium** | `O(R * C log(R * C))` | `O(R * C)` | Dijkstra on 2D grid where edge weight is abs(height[r2][c2] - height[r1][c1]), minimizing max effort. | [Notes 📝](topics/23-shortest-path.md#leetcode-1631-path-with-minimum-effort) |
 | [ ] | 1334 | [Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) | **Medium** | `O(N^3)` | `O(N^2)` | Floyd-Warshall all-pairs shortest paths. For each city, count reachable neighbors within distance threshold. | [Notes 📝](topics/23-shortest-path.md#leetcode-1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [ ] | 1976 | [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/) | **Medium** | `O(E log V)` | `O(V + E)` | Dijkstra keeping dist[] and ways[] modulo 10^9+7. If shorter path found, update ways; if equal, add ways. | [Notes 📝](topics/23-shortest-path.md#leetcode-1976-number-of-ways-to-arrive-at-destination) |
+| [ ] | 815 | [Bus Routes](https://leetcode.com/problems/bus-routes/) | **Hard** | `O(N * routes_len)` | `O(N * routes_len)` | Map each bus stop to route indices. BFS where each level represents taking one more bus: from current stop, iterate through unvisited routes and enqueue all their stops. | [Notes 📝](topics/23-shortest-path.md#leetcode-815-bus-routes) |
+| [ ] | 1293 | [Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | **Hard** | `O(M * N * K)` | `O(M * N * K)` | BFS tracking 3D state (row, col, obstacles_left). Only visit neighbor if remaining obstacle elimination quota is strictly higher than previously seen. | [Notes 📝](topics/23-shortest-path.md#leetcode-1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 
 ### 24. [MST / Graph Greedy](topics/24-mst-graph-greedy.md)
 
@@ -424,6 +459,8 @@ python3 -m http.server 8000
 | [ ] | 648 | [Replace Words](https://leetcode.com/problems/replace-words/) | **Medium** | `O(N * L)` | `O(Dict Chars)` | Store dictionary root words in Trie. For each sentence word, walk Trie to find shortest matching prefix. | [Notes 📝](topics/25-trie.md#leetcode-648-replace-words) |
 | [ ] | 677 | [Map Sum Pairs](https://leetcode.com/problems/map-sum-pairs/) | **Medium** | `O(L) per op` | `O(Total Chars)` | Trie storing value at word end and sum of subtree values, or compute sum by traversing subtree from prefix node. | [Notes 📝](topics/25-trie.md#leetcode-677-map-sum-pairs) |
 | [ ] | 1268 | [Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/) | **Medium** | `O(N log N + L)` | `O(Total Chars)` | Trie where each node stores up to 3 lexicographically smallest words, or sort products and use binary search per prefix. | [Notes 📝](topics/25-trie.md#leetcode-1268-search-suggestions-system) |
+| [ ] | 336 | [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/) | **Hard** | `O(N * L^2)` | `O(N * L)` | Insert reversed words into Trie. For each word, walk Trie checking if matched prefix has palindromic remainder; or hash map of reversed words splitting into prefix/suffix. | [Notes 📝](topics/25-trie.md#leetcode-336-palindrome-pairs) |
+| [ ] | 642 | [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/) *(Premium - [Free Alt](https://www.lintcode.com/problem/1064/))* | **Hard** | `O(L) per char input` | `O(Total Chars)` | Trie where each node stores a hash map/top list of sentence frequencies. Advance pointer with each typed character; '#' updates sentence frequency and resets pointer. | [Notes 📝](topics/25-trie.md#leetcode-642-design-search-autocomplete-system) |
 
 ### 26. [Bit Manipulation](topics/26-bit-manipulation.md)
 
@@ -450,6 +487,10 @@ python3 -m http.server 8000
 | [ ] | 322 | [Coin Change](https://leetcode.com/problems/coin-change/) | **Medium** | `O(amount * coins)` | `O(amount)` | Unbounded knapsack: dp[a] = min(dp[a], 1 + dp[a - coin]) initialized to infinity with dp[0] = 0. | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-322-coin-change) |
 | [ ] | 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | **Medium** | `O(N * sqrt(N))` | `O(N)` | dp[i] = 1 + min(dp[i - j*j]) for j*j <= i, or Lagrange's four-square theorem in O(sqrt(N)). | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-279-perfect-squares) |
 | [ ] | 300 | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | **Medium** | `O(N log N)` | `O(N)` | Patience sorting / binary search: maintain tails array of smallest tail of all increasing subsequences. | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-300-longest-increasing-subsequence) |
+| [ ] | 188 | [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | **Hard** | `O(K * N)` | `O(K)` | State machine DP maintaining buy[j] and sell[j] for j in 1..k: buy[j] = max(buy[j], sell[j-1] - price) and sell[j] = max(sell[j], buy[j] + price). | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-188-best-time-to-buy-and-sell-stock-iv) |
+| [ ] | 354 | [Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/) | **Hard** | `O(N log N)` | `O(N)` | Sort envelopes by width ascending, and height descending for ties. Find Longest Increasing Subsequence (LIS) on heights using binary search patience sorting. | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-354-russian-doll-envelopes) |
+| [ ] | 403 | [Frog Jump](https://leetcode.com/problems/frog-jump/) | **Hard** | `O(N^2)` | `O(N^2)` | DP map {stone_position: set_of_valid_jump_units}. For stone position and jump k, add k-1, k, k+1 to reachable stone if position + jump in stones. | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-403-frog-jump) |
+| [ ] | 887 | [Super Egg Drop](https://leetcode.com/problems/super-egg-drop/) | **Hard** | `O(K log N)` | `O(K)` | Invert problem: `dp[m][k]` is max floors testable with m moves and k eggs. Recurrence: dp[m][k] = 1 + dp[m-1][k-1] + dp[m-1][k]. Stop when dp[m][k] >= n. | [Notes 📝](topics/27-1d-dp-basics.md#leetcode-887-super-egg-drop) |
 
 ### 28. [Knapsack / Subset DP](topics/28-knapsack-subset-dp.md)
 
@@ -476,6 +517,8 @@ python3 -m http.server 8000
 | [ ] | 221 | [Maximal Square](https://leetcode.com/problems/maximal-square/) | **Medium** | `O(M * N)` | `O(N)` | dp[r][c] = 1 + min(dp[r-1][c], dp[r][c-1], dp[r-1][c-1]) when cell is '1'. Track max side length. | [Notes 📝](topics/29-grid-dp.md#leetcode-221-maximal-square) |
 | [ ] | 931 | [Minimum Falling Path Sum](https://leetcode.com/problems/minimum-falling-path-sum/) | **Medium** | `O(N^2)` | `O(N)` | Falling path: dp[r][c] = matrix[r][c] + min(dp[r-1][c-1], dp[r-1][c], dp[r-1][c+1]). Update row by row. | [Notes 📝](topics/29-grid-dp.md#leetcode-931-minimum-falling-path-sum) |
 | [ ] | 120 | [Triangle](https://leetcode.com/problems/triangle/) | **Medium** | `O(N^2)` | `O(1) in-place` | Bottom-up triangle DP: start from second to last row, triangle[r][c] += min(triangle[r+1][c], triangle[r+1][c+1]). | [Notes 📝](topics/29-grid-dp.md#leetcode-120-triangle) |
+| [ ] | 174 | [Dungeon Game](https://leetcode.com/problems/dungeon-game/) | **Hard** | `O(M * N)` | `O(N)` | Bottom-up DP from bottom-right (princess) to (0,0): `dp[r][c] = max(1, min(dp[r+1][c], dp[r][c+1]) - dungeon[r][c])`. Knight must maintain >= 1 HP. | [Notes 📝](topics/29-grid-dp.md#leetcode-174-dungeon-game) |
+| [ ] | 1463 | [Cherry Pickup II](https://leetcode.com/problems/cherry-pickup-ii/) | **Hard** | `O(Rows * Cols^2)` | `O(Cols^2)` | 3D/2D DP: `dp[r][c1][c2]` = max cherries when robot 1 is at (r, c1) and robot 2 is at (r, c2). Transition explores all 3 x 3 = 9 move combinations of (dc1, dc2). | [Notes 📝](topics/29-grid-dp.md#leetcode-1463-cherry-pickup-ii) |
 
 ### 30. [String DP / Sequence DP](topics/30-string-dp-sequence-dp.md)
 
@@ -489,6 +532,10 @@ python3 -m http.server 8000
 | [ ] | 583 | [Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/) | **Medium** | `O(M * N)` | `O(N)` | Delete distance = len(s1) + len(s2) - 2 * LCS(s1, s2). | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-583-delete-operation-for-two-strings) |
 | [ ] | 97 | [Interleaving String](https://leetcode.com/problems/interleaving-string/) | **Medium** | `O(M * N)` | `O(N)` | Interleaving String: dp[i][j] is true if s3 matches s1[..i] and s2[..j]. 2D boolean grid. | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-97-interleaving-string) |
 | [ ] | 1312 | [Minimum Insertion Steps to Make a String Palindrome](https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | **Hard** | `O(N^2)` | `O(N)` | Min insertions to make palindrome = len(s) - Longest Palindromic Subsequence(s). LPS is LCS(s, reverse(s)). | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-1312-minimum-insertion-steps-to-make-a-string-palindrome) |
+| [ ] | 10 | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/) | **Hard** | `O(M * N)` | `O(M * N)` | 2D DP `dp[i][j]` matching s[0..i] with p[0..j]. If p[j-1] == '*', match 0 occurrences (dp[i][j-2]) or 1+ occurrences (dp[i-1][j] if chars match). | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-10-regular-expression-matching) |
+| [ ] | 44 | [Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) | **Hard** | `O(M * N)` | `O(N)` | 2D DP: if p[j-1] == '*', dp[i][j] = dp[i-1][j] (match 1+ char) or dp[i][j-1] (match 0 char). Or two pointers with backtrack on last '*' position in O(M*N). | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-44-wildcard-matching) |
+| [ ] | 214 | [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) | **Hard** | `O(N)` | `O(N)` | Find the longest palindrome prefix: construct `temp = s + '#' + s[::-1]` and run KMP table / rolling hash to find the longest common prefix-suffix length l. Prepend s[l:][::-1]. | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-214-shortest-palindrome) |
+| [ ] | 312 | [Burst Balloons](https://leetcode.com/problems/burst-balloons/) | **Hard** | `O(N^3)` | `O(N^2)` | Interval DP: pad with 1s at ends. For sub-range (i, j), pick last balloon k to burst: `dp[i][j] = max(dp[i][j], nums[i]*nums[k]*nums[j] + dp[i][k] + dp[k][j])`. | [Notes 📝](topics/30-string-dp-sequence-dp.md#leetcode-312-burst-balloons) |
 
 ## 🧠 Revision Framework (The 1-3-7-30 Rule)
 
